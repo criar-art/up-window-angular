@@ -23,6 +23,7 @@
     "publish": "cd dist/up-window-angular && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:module": "ng test up-window-angular",
     "postbuild": "node scripts/post-build.js"
   },
   "private": true,
