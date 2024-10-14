@@ -61,7 +61,7 @@ export class UpWindowAngularComponent implements OnInit {
   getButtonClass(type: string) {
     switch (type) {
       case 'primary':
-        return 'btn-confirm';
+        return 'btn-primary';
       case 'secondary':
         return 'btn-secondary';
       default:
