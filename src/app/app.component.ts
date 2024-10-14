@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { UpWindowAngularModule } from 'up-window-angular';
 import { UpWindowAngularModule } from '../../projects/up-window-angular/src/public-api';
@@ -28,6 +28,11 @@ export class AppComponent {
 
   codeString: string = '<up-window-angular />';
   isModalActive: boolean = false;
+  isModalOpenExample: WritableSignal<boolean> = signal(false);
+
+  openModalExample() {
+    this.isModalOpenExample.set(true);
+  }
 
   openModal(): void {
     this.isModalActive = true;

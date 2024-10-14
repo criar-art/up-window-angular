@@ -25,8 +25,16 @@
           Learn install
         </button>
       </div>
-      <up-window-angular />
-
+      <hr />
+      <button (click)="openModalExample()">Open Modal</button>
+      <up-window-angular
+        [isOpen]="isModalOpenExample"
+        title="Modal Title"
+        subtitle="This is the subtitle of the modal."
+        size="medium"
+      >
+        Modal Example content!
+      </up-window-angular>
     </div>
   </main>
   <app-footer></app-footer>
