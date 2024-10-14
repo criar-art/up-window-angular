@@ -8,9 +8,9 @@
     <div class="up-window-body">
       <ng-content></ng-content>
     </div>
-    <div class="up-window-footer">
-      <button class="btn btn-cancel" (click)="onCancel()">Cancel</button>
-      <button class="btn btn-confirm" (click)="onConfirm()">Confirm</button>
+    <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
+      <button class="btn" [ngClass]="getButtonClass(cancelType)" (click)="onCancel()">{{ cancelText }}</button>
+      <button class="btn" [ngClass]="getButtonClass(confirmType)" (click)="onConfirm()">{{ confirmText }}</button>
     </div>
   </div>
 </div>

@@ -137,8 +137,33 @@ body {
 
 .up-window-footer {
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
+
+  &.align-start {
+    justify-content: flex-start;
+  }
+
+  &.align-end {
+    justify-content: flex-end;
+  }
+
+  &.align-center {
+    justify-content: center;
+  }
+}
+
+.btn-default {
+  background-color: var(--up-window-default);
+}
+
+.btn-primary {
+  background-color: var(--up-window-primary);
+  color: var(--up-window-text);
+}
+
+.btn-secondary {
+  background-color: var(--up-window-secondary);
+  color: var(--up-window-text);
 }
 
 .btn {
@@ -146,15 +171,6 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 4px;
-}
-
-.btn-cancel {
-  background-color: var(--up-window-default);
-}
-
-.btn-confirm {
-  background-color: var(--up-window-primary);
-  color: white;
 }
 
 @keyframes up-window-fadeIn {

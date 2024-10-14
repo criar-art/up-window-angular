@@ -20,6 +20,14 @@ export class UpWindowAngularComponent implements OnInit {
   @Input() class: string | undefined;
   @Input() isOpen: WritableSignal<boolean> = signal(false);
   @Input() animation: string = 'fade';
+  @Input() confirmText: string = 'Confirm';
+  @Input() cancelText: string = 'Cancel';
+  @Input() confirmType: string = 'primary';
+  @Input() cancelType: string = 'default';
+  @Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';
+  @Input() onConfirmClick: () => void = () => this.onConfirm();
+  @Input() onCancelClick: () => void = () => this.onCancel();
+
   closingAnimation: boolean = false;
 
   ngOnInit(): void {}
@@ -45,12 +53,23 @@ export class UpWindowAngularComponent implements OnInit {
     };
   }
 
-  onConfirm() {
+  getButtonClass(type: string) {
+    switch (type) {
+      case 'primary':
+        return 'btn-confirm';
+      case 'secondary':
+        return 'btn-secondary';
+      default:
+        return 'btn-default';
+    }
+  }
+
+  onCancel() {
     console.log('Confirmed!');
     this.closeWindow();
   }
 
-  onCancel() {
+  onConfirm() {
     console.log('Cancelled!');
     this.closeWindow();
   }
