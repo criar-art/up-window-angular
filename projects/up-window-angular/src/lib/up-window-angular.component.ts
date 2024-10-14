@@ -25,6 +25,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() class: string | undefined;
   @Input() isOpen: WritableSignal<boolean> = signal(false);
   @Input() animation: string = 'fade';
+  @Input() restrictMode: boolean = false;
   @Input() confirmText: string = 'Confirm';
   @Input() cancelText: string = 'Cancel';
   @Input() confirmType: string = 'primary';
@@ -61,7 +62,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   }
 
   handleKeydown(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.isOpen()) {
+    if (event.key === 'Escape' && this.isOpen() && !this.restrictMode) {
       this.closeWindow();
     }
 
