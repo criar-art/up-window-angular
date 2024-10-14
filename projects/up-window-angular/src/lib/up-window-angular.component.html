@@ -1,5 +1,5 @@
 <div class="overlay" [class.active]="isOpen()">
-  <div class="up-window" [ngClass]="animation">
+  <div class="up-window" [ngClass]="getClass()">
     <button class="close-window" (click)="closeWindow()">&times;</button>
     <div class="up-window-header">
       <h3 class="up-window-title">{{ title }}</h3>
