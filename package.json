@@ -1,6 +1,6 @@
 {
   "name": "up-window-angular-spa",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "author": "lucasferreiralimax (https://github.com/lucasferreiralimax)",
   "repository": "https://github.com/criar-art/up-window-angular",
   "bugs": {
@@ -19,7 +19,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:module": "ng build up-window-angular && npm run postbuild",
-    "version": "npm version patch && cd projects/up-window-angular && npm version patch",
+    "version": "cd projects/up-window-angular && npm version patch",
     "publish": "cd dist/up-window-angular && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
