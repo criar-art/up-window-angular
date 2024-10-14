@@ -1,2 +1,18 @@
-<div class="up-window-angular" [ngClass]="class">
+<div class="overlay" [ngClass]="{ active: isOpen() }">
+  <div class="up-window" [ngClass]="class">
+    <div class="up-window-header">
+      <h2>{{ title }}</h2>
+      <p>{{ subtitle }}</p>
+      <button class="close-button" (click)="closeWindow()">×</button>
+    </div>
+
+    <div class="up-window-body">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="up-window-footer">
+      <button class="btn btn-cancel" (click)="onCancel()">Cancel</button>
+      <button class="btn btn-confirm" (click)="onConfirm()">Confirm</button>
+    </div>
+  </div>
 </div>
