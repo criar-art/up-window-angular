@@ -99,6 +99,18 @@
       >
         Scale Example content!
       </up-window-angular>
+      <hr />
+      <button class="button-modal-example" type="button" (click)="openWindowExample('restrict')">
+        Open Mode Restrict Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenRestrict"
+        title="Restrict Window"
+        subtitle="This window mode Restrict."
+        [restrictMode]="true"
+      >
+        Mode Restrict Example content!
+      </up-window-angular>
     </div>
   </main>
   <app-footer></app-footer>
