@@ -26,16 +26,64 @@
         </button>
       </div>
       <hr />
-      <button class="button-modal-example" type="button" (click)="openModalExample()">
-        Open Modal Example
+      <button class="button-modal-example" type="button" (click)="openWindowExample('fade')">
+        Open Fade Example
       </button>
       <up-window-angular
-        [isOpen]="isModalOpenExample"
-        title="Modal Title"
-        subtitle="This is the subtitle of the modal."
-        size="medium"
+        [isOpen]="isWindowOpenFade"
+        title="Fade Window"
+        subtitle="This window uses a fade animation."
+        animation="fade"
       >
-        Modal Example content!
+        Fade Example content!
+      </up-window-angular>
+
+      <button class="button-modal-example" type="button" (click)="openWindowExample('slide')">
+        Open Slide Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenSlide"
+        title="Slide Window"
+        subtitle="This window uses a slide animation."
+        animation="slide"
+      >
+        Slide Example content!
+      </up-window-angular>
+
+      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-up')">
+        Open Slide Up Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenSlideUp"
+        title="Slide Up Window"
+        subtitle="This window uses a slide-up animation."
+        animation="slide-up"
+      >
+        Slide Up Example content!
+      </up-window-angular>
+
+      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-down')">
+        Open Slide Down Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenSlideDown"
+        title="Slide Down Window"
+        subtitle="This window uses a slide-down animation."
+        animation="slide-down"
+      >
+        Slide Down Example content!
+      </up-window-angular>
+
+      <button class="button-modal-example" type="button" (click)="openWindowExample('scale')">
+        Open Scale Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenScale"
+        title="Scale Window"
+        subtitle="This window uses a scale animation."
+        animation="scale"
+      >
+        Scale Example content!
       </up-window-angular>
     </div>
   </main>
