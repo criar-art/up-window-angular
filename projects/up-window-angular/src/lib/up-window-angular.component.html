@@ -7,9 +7,15 @@
   aria-describedby="dialog-description"
   aria-modal="true"
   [attr.aria-hidden]="!isOpen()"
+  (click)="!restrictMode && closeWindow()"
 >
-  <div class="up-window" [ngClass]="getClass()">
+  <div
+    class="up-window"
+    [ngClass]="getClass()"
+    (click)="$event.stopPropagation()"
+  >
     <button
+      *ngIf="!restrictMode"
       class="close-window"
       aria-label="Close window"
       (click)="closeWindow()"
