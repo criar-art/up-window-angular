@@ -25,92 +25,127 @@
           Learn install
         </button>
       </div>
-      <hr />
-      <button class="button-modal-example" type="button" (click)="openWindowExample('fade')">
-        Open Fade Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenFade"
-        title="Fade Window"
-        subtitle="This window uses a fade animation."
-        animation="fade"
-        (confirm)="handleConfirm()"
-        (cancel)="handleCancel()"
-      >
-        Fade Example content!
-      </up-window-angular>
+    </div>
+    <div class="content">
+      <h2 class="content-title">Animation</h2>
+      <div class="examples">
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('fade')"
+        >
+          Fade
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenFade"
+          title="Fade Window"
+          subtitle="This window uses a fade animation."
+          animation="fade"
+          (confirm)="handleConfirm()"
+          (cancel)="handleCancel()"
+        >
+          Fade content!
+        </up-window-angular>
 
-      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-left')">
-        Open Slide Left Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenSlideLeft"
-        title="Slide Window"
-        subtitle="This window uses a slide animation."
-        animation="slide-left"
-      >
-        Slide Left Example content!
-      </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('slide-left')"
+        >
+          Slide Left
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenSlideLeft"
+          title="Slide Left Window"
+          subtitle="This window uses a slide animation."
+          animation="slide-left"
+        >
+          Slide Left content!
+        </up-window-angular>
 
-      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-right')">
-        Open Slide Left Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenSlideRight"
-        title="Slide Window"
-        subtitle="This window uses a slide animation."
-        animation="slide-right"
-      >
-        Slide Right Example content!
-      </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('slide-right')"
+        >
+          Slide Right
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenSlideRight"
+          title="Slide Right Window"
+          subtitle="This window uses a slide animation."
+          animation="slide-right"
+        >
+          Slide Right content!
+        </up-window-angular>
 
-      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-up')">
-        Open Slide Up Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenSlideUp"
-        title="Slide Up Window"
-        subtitle="This window uses a slide-up animation."
-        animation="slide-up"
-      >
-        Slide Up Example content!
-      </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('slide-up')"
+        >
+          Slide Up
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenSlideUp"
+          title="Slide Up Window"
+          subtitle="This window uses a slide-up animation."
+          animation="slide-up"
+        >
+          Slide Up content!
+        </up-window-angular>
 
-      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-down')">
-        Open Slide Down Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenSlideDown"
-        title="Slide Down Window"
-        subtitle="This window uses a slide-down animation."
-        animation="slide-down"
-      >
-        Slide Down Example content!
-      </up-window-angular>
-
-      <button class="button-modal-example" type="button" (click)="openWindowExample('scale')">
-        Open Scale Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenScale"
-        title="Scale Window"
-        subtitle="This window uses a scale animation."
-        animation="scale"
-      >
-        Scale Example content!
-      </up-window-angular>
-      <hr />
-      <button class="button-modal-example" type="button" (click)="openWindowExample('restrict')">
-        Open Mode Restrict Example
-      </button>
-      <up-window-angular
-        [isOpen]="isWindowOpenRestrict"
-        title="Restrict Window"
-        subtitle="This window mode Restrict."
-        [restrictMode]="true"
-      >
-        Mode Restrict Example content!
-      </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('slide-down')"
+        >
+          Slide Down
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenSlideDown"
+          title="Slide Down Window"
+          subtitle="This window uses a slide-down animation."
+          animation="slide-down"
+        >
+          Slide Down content!
+        </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('scale')"
+        >
+          Scale
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenScale"
+          title="Scale Window"
+          subtitle="This window uses a scale animation."
+          animation="scale"
+        >
+          Scale content!
+        </up-window-angular>
+      </div>
+    </div>
+    <div class="content">
+      <h2 class="content-title">Mode</h2>
+      <div class="examples">
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('restrict')"
+        >
+          Mode Restrict
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenRestrict"
+          title="Restrict Window"
+          subtitle="This window mode Restrict."
+          [restrictMode]="true"
+        >
+          Mode Restrict content!
+        </up-window-angular>
+      </div>
     </div>
   </main>
   <app-footer></app-footer>
