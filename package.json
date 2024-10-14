@@ -19,7 +19,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:module": "ng build up-window-angular && npm run postbuild",
-    "version": "cd projects/up-window-angular && npm version patch",
+    "version": "npm version patch && cd projects/up-window-angular && npm version patch",
     "publish": "cd dist/up-window-angular && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
