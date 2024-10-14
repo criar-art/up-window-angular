@@ -7,6 +7,9 @@ import {
   WritableSignal,
   Output,
   EventEmitter,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -15,7 +18,7 @@ import {
   styleUrls: ['./up-window-angular.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class UpWindowAngularComponent implements OnInit {
+export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() title: string = 'Default Title';
   @Input() subtitle: string = 'Default Subtitle';
   @Input() size: string = 'medium';
@@ -34,8 +37,55 @@ export class UpWindowAngularComponent implements OnInit {
   @Output() cancel = new EventEmitter<void>();
 
   closingAnimation: boolean = false;
+  focusableElements!: NodeListOf<HTMLElement>;
+  firstFocusableElement!: HTMLElement;
+  lastFocusableElement!: HTMLElement;
 
-  ngOnInit(): void {}
+  @ViewChild('modal') modal!: ElementRef;
+
+  ngOnInit(): void {
+    document.addEventListener('keydown', this.handleKeydown.bind(this));
+  }
+
+  ngAfterViewInit(): void {
+    if (this.modal) {
+      this.focusableElements = this.modal.nativeElement.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (this.focusableElements.length > 0) {
+        this.firstFocusableElement = this.focusableElements[0];
+        this.lastFocusableElement =
+          this.focusableElements[this.focusableElements.length - 1];
+      }
+    }
+  }
+
+  handleKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape' && this.isOpen()) {
+      this.closeWindow();
+    }
+
+    if (event.key === 'Tab' && this.isOpen()) {
+      this.trapFocus(event);
+    }
+  }
+
+  trapFocus(event: KeyboardEvent) {
+    const isShiftPressed = event.shiftKey;
+    const activeElement = document.activeElement as HTMLElement;
+
+    if (!isShiftPressed && activeElement === this.lastFocusableElement) {
+      event.preventDefault();
+      this.firstFocusableElement.focus();
+    } else if (isShiftPressed && activeElement === this.firstFocusableElement) {
+      event.preventDefault();
+      this.lastFocusableElement.focus();
+    }
+  }
+
+  ngOnDestroy(): void {
+    document.removeEventListener('keydown', this.handleKeydown.bind(this));
+  }
 
   openWindow() {
     this.isOpen.set(true);
