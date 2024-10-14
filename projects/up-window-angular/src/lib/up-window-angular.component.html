@@ -1,16 +1,47 @@
-<div class="overlay" [class.active]="isOpen()">
+<div
+  #modal
+  class="overlay"
+  [class.active]="isOpen()"
+  role="dialog"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-description"
+  aria-modal="true"
+  [attr.aria-hidden]="!isOpen()"
+>
   <div class="up-window" [ngClass]="getClass()">
-    <button class="close-window" (click)="closeWindow()">&times;</button>
+    <button
+      class="close-window"
+      aria-label="Close window"
+      (click)="closeWindow()"
+    >
+      &times;
+    </button>
     <div class="up-window-header">
-      <h3 class="up-window-title">{{ title }}</h3>
-      <h4 class="up-window-subtitle">{{ subtitle }}</h4>
+      <h3 id="dialog-title" class="up-window-title">{{ title }}</h3>
+      <h4 id="dialog-description" class="up-window-subtitle">
+        {{ subtitle }}
+      </h4>
     </div>
     <div class="up-window-body">
       <ng-content></ng-content>
     </div>
     <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
-      <button class="btn" [ngClass]="getButtonClass(cancelType)" (click)="onCancel()">{{ cancelText }}</button>
-      <button class="btn" [ngClass]="getButtonClass(confirmType)" (click)="onConfirm()">{{ confirmText }}</button>
+      <button
+        class="btn"
+        [ngClass]="getButtonClass(cancelType)"
+        (click)="onCancel()"
+        [attr.aria-label]="cancelText"
+      >
+        {{ cancelText }}
+      </button>
+      <button
+        class="btn"
+        [ngClass]="getButtonClass(confirmType)"
+        (click)="onConfirm()"
+        [attr.aria-label]="confirmText"
+      >
+        {{ confirmText }}
+      </button>
     </div>
   </div>
 </div>
