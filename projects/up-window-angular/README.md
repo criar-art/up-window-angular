@@ -2,7 +2,7 @@
 
 An Angular library designed to create dynamic, customizable windows and window-based components for web applications. With a simple and intuitive API, UpWindow enables developers to easily integrate responsive windows, popups, and floating windows into their projects. It provides full control over window size, position, animations, and behavior, offering a flexible solution for creating engaging user interfaces.
 
-<img alt="Screenshot" width="100%" src="https://raw.githubusercontent.com/criar-art/up-window-angular/master/public/screen-up-window-angular.png" />
+<video width="100%" controls> <source src="https://raw.githubusercontent.com/criar-art/up-window-angular/master/public/modo-restrict-window.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
 
 ## Install
 ```bash
