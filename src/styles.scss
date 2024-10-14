@@ -101,8 +101,7 @@ h2 {
   white-space: break-spaces;
 }
 
-
-.button-modal {
+.button-modal, .button-modal-example {
   background: var(--vtl-background-gradient);
   color: var(--color-text);
   display: flex;
@@ -118,6 +117,14 @@ h2 {
   svg {
     margin-right: 1rem;
   }
+}
+
+.button-modal-example {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  margin-left: 0;
+  padding: 1rem;
 }
 
 .input-search {

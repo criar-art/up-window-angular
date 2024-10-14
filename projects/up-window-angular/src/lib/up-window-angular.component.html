@@ -1,9 +1,11 @@
 <div class="overlay" [ngClass]="{ active: isOpen() }">
   <div class="up-window" [ngClass]="class">
+    <button class="close-window" (click)="closeWindow()">×</button>
     <div class="up-window-header">
-      <h2>{{ title }}</h2>
-      <p>{{ subtitle }}</p>
-      <button class="close-button" (click)="closeWindow()">×</button>
+      <div>
+        <h2 class="up-window-title">{{ title }}</h2>
+        <p class="up-window-subtitle">{{ subtitle }}</p>
+      </div>
     </div>
 
     <div class="up-window-body">
