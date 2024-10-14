@@ -1,0 +1,60 @@
+{
+  "name": "up-window-angular-spa",
+  "version": "0.1.0",
+  "author": "lucasferreiralimax (https://github.com/lucasferreiralimax)",
+  "repository": "https://github.com/criar-art/up-window-angular",
+  "bugs": {
+    "url": "https://github.com/criar-art/up-window-angular/issues"
+  },
+  "homepage": "https://up-window-angular.web.app",
+  "keywords": [
+    "angular",
+    "components",
+    "modal",
+    "window",
+    "ui"
+  ],
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:module": "ng build up-window-angular && npm run postbuild",
+    "version": "cd projects/up-window-angular && npm version patch",
+    "publish": "cd dist/up-window-angular && npm publish",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "postbuild": "node scripts/post-build.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.8",
+    "@angular/common": "^18.2.8",
+    "@angular/compiler": "^18.2.8",
+    "@angular/core": "^18.2.8",
+    "@angular/forms": "^18.2.8",
+    "@angular/platform-browser": "^18.2.8",
+    "@angular/platform-browser-dynamic": "^18.2.8",
+    "@angular/router": "^18.2.8",
+    "highlight.js": "^11.10.0",
+    "jsonminify": "^0.4.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.7.0",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.8",
+    "@angular/cli": "^18.2.8",
+    "@angular/compiler-cli": "^18.2.8",
+    "@types/jasmine": "~5.1.0",
+    "glob": "^11.0.0",
+    "jasmine-core": "^5.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^18.2.1",
+    "terser": "^5.31.6",
+    "typescript": "^5.5.4"
+  }
+}
