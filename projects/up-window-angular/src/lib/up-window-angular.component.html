@@ -7,9 +7,15 @@
   aria-describedby="dialog-description"
   aria-modal="true"
   [attr.aria-hidden]="!isOpen()"
+  (click)="closeWindow('overlay')"
 >
-  <div class="up-window" [ngClass]="getClass()">
+  <div
+    class="up-window"
+    [ngClass]="getClass()"
+    (click)="$event.stopPropagation()"
+  >
     <button
+      *ngIf="!restrictMode"
       class="close-window"
       aria-label="Close window"
       (click)="closeWindow()"
@@ -27,7 +33,7 @@
     </div>
     <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
       <button
-        class="btn"
+        class="btn btn-cancel"
         [ngClass]="getButtonClass(cancelType)"
         (click)="onCancel()"
         [attr.aria-label]="cancelText"
@@ -35,7 +41,7 @@
         {{ cancelText }}
       </button>
       <button
-        class="btn"
+        class="btn btn-confirm"
         [ngClass]="getButtonClass(confirmType)"
         (click)="onConfirm()"
         [attr.aria-label]="confirmText"

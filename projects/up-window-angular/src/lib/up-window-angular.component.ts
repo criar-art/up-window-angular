@@ -10,6 +10,7 @@ import {
   OnDestroy,
   ElementRef,
   ViewChild,
+  effect,
 } from '@angular/core';
 
 @Component({
@@ -25,6 +26,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() class: string | undefined;
   @Input() isOpen: WritableSignal<boolean> = signal(false);
   @Input() animation: string = 'fade';
+  @Input() restrictMode: boolean = false;
   @Input() confirmText: string = 'Confirm';
   @Input() cancelText: string = 'Cancel';
   @Input() confirmType: string = 'primary';
@@ -37,11 +39,21 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Output() cancel = new EventEmitter<void>();
 
   closingAnimation: boolean = false;
+  openingAnimation: boolean = false;
+  shakeAnimation: boolean = false;
   focusableElements!: NodeListOf<HTMLElement>;
   firstFocusableElement!: HTMLElement;
   lastFocusableElement!: HTMLElement;
 
   @ViewChild('modal') modal!: ElementRef;
+
+  constructor() {
+    effect(() => {
+      this.isOpen()
+        ? this.startOpeningAnimation()
+        : this.startClosingAnimation();
+    });
+  }
 
   ngOnInit(): void {
     document.addEventListener('keydown', this.handleKeydown.bind(this));
@@ -61,13 +73,22 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   }
 
   handleKeydown(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.isOpen()) {
+    if (event.key === 'Escape' && this.isOpen() && !this.restrictMode) {
       this.closeWindow();
+    } else if (event.key === 'Escape' && this.isOpen() && this.restrictMode) {
+      this.triggerShakeAnimation();
     }
 
     if (event.key === 'Tab' && this.isOpen()) {
       this.trapFocus(event);
     }
+  }
+
+  triggerShakeAnimation() {
+    this.shakeAnimation = true;
+    setTimeout(() => {
+      this.shakeAnimation = false;
+    }, 500);
   }
 
   trapFocus(event: KeyboardEvent) {
@@ -87,24 +108,39 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
     document.removeEventListener('keydown', this.handleKeydown.bind(this));
   }
 
-  openWindow() {
-    this.isOpen.set(true);
+  startOpeningAnimation() {
+    this.openingAnimation = true;
+    setTimeout(() => {
+      this.openingAnimation = false;
+    }, 300);
   }
 
-  closeWindow() {
+  startClosingAnimation() {
     this.closingAnimation = true;
-
     setTimeout(() => {
-      this.isOpen.set(false);
       this.closingAnimation = false;
     }, 300);
+  }
+
+  closeWindow(from?: string) {
+    if (from == 'overlay' && this.restrictMode) {
+      this.triggerShakeAnimation();
+    } else {
+      this.closingAnimation = true;
+
+      setTimeout(() => {
+        this.isOpen.set(false);
+        this.closingAnimation = false;
+      }, 300);
+    }
   }
 
   getClass() {
     return {
       ...(this.class ? { [this.class]: true } : {}),
-      [this.animation]: !this.closingAnimation,
+      [this.animation]: !this.closingAnimation && this.openingAnimation,
       [`${this.animation}-out`]: this.closingAnimation,
+      shake: this.shakeAnimation,
     };
   }
 

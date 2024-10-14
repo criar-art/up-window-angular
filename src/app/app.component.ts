@@ -34,16 +34,18 @@ export class AppComponent {
   isWindowOpenSlideUp: WritableSignal<boolean> = signal(false);
   isWindowOpenSlideDown: WritableSignal<boolean> = signal(false);
   isWindowOpenScale: WritableSignal<boolean> = signal(false);
+  isWindowOpenRestrict: WritableSignal<boolean> = signal(false);
 
-  openWindowExample(animation: string) {
+  openWindowExample(type: string) {
     this.isWindowOpenFade.set(false);
     this.isWindowOpenSlideLeft.set(false);
     this.isWindowOpenSlideRight.set(false);
     this.isWindowOpenSlideUp.set(false);
     this.isWindowOpenSlideDown.set(false);
     this.isWindowOpenScale.set(false);
+    this.isWindowOpenRestrict.set(false);
 
-    switch (animation) {
+    switch (type) {
       case 'fade':
         this.isWindowOpenFade.set(true);
         break;
@@ -61,6 +63,9 @@ export class AppComponent {
         break;
       case 'scale':
         this.isWindowOpenScale.set(true);
+        break;
+      case 'restrict':
+        this.isWindowOpenRestrict.set(true);
         break;
     }
   }
