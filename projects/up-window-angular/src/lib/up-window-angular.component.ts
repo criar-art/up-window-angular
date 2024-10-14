@@ -5,6 +5,8 @@ import {
   ViewEncapsulation,
   signal,
   WritableSignal,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -27,6 +29,9 @@ export class UpWindowAngularComponent implements OnInit {
   @Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';
   @Input() onConfirmClick: () => void = () => this.onConfirm();
   @Input() onCancelClick: () => void = () => this.onCancel();
+
+  @Output() confirm = new EventEmitter<void>();
+  @Output() cancel = new EventEmitter<void>();
 
   closingAnimation: boolean = false;
 
@@ -66,11 +71,13 @@ export class UpWindowAngularComponent implements OnInit {
 
   onCancel() {
     console.log('Confirmed!');
+    this.confirm.emit();
     this.closeWindow();
   }
 
   onConfirm() {
     console.log('Cancelled!');
+    this.cancel.emit();
     this.closeWindow();
   }
 }

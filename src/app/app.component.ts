@@ -74,4 +74,12 @@ export class AppComponent {
     this.isModalActive = false;
     this.renderer.removeClass(document.body, 'modal-active');
   }
+
+  handleConfirm() {
+    console.log('Confirmed from emit action!');
+  }
+
+  handleCancel() {
+    console.log('Cancelled from emit action!');
+  }
 }

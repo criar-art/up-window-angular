@@ -34,6 +34,8 @@
         title="Fade Window"
         subtitle="This window uses a fade animation."
         animation="fade"
+        (confirm)="handleConfirm()"
+        (cancel)="handleCancel()"
       >
         Fade Example content!
       </up-window-angular>
