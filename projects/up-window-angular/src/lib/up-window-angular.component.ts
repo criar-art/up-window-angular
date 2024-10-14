@@ -20,6 +20,7 @@ export class UpWindowAngularComponent implements OnInit {
   @Input() class: string | undefined;
 
   @Input() isOpen: WritableSignal<boolean> = signal(false);
+  @Input() animation: string = 'fade';
 
   ngOnInit(): void {}
 
@@ -28,8 +29,16 @@ export class UpWindowAngularComponent implements OnInit {
   }
 
   closeWindow() {
-    this.isOpen.set(false);
+    const upWindowElement = document.querySelector('.up-window');
+    if (upWindowElement) {
+      upWindowElement.classList.add(`${this.animation}-out`);
+      setTimeout(() => {
+        this.isOpen.set(false);
+        upWindowElement.classList.remove(`${this.animation}-out`);
+      }, 300);
+    }
   }
+
 
   onConfirm() {
     console.log('Confirmed!');

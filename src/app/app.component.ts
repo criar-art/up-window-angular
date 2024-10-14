@@ -28,10 +28,10 @@ export class AppComponent {
 
   codeString: string = '<up-window-angular />';
   isModalActive: boolean = false;
-  isModalOpenExample: WritableSignal<boolean> = signal(false);
+  isWindowOpenExample: WritableSignal<boolean> = signal(false);
 
-  openModalExample() {
-    this.isModalOpenExample.set(true);
+  openWindowExample() {
+    this.isWindowOpenExample.set(true);
   }
 
   openModal(): void {

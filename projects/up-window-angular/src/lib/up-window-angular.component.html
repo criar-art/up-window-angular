@@ -1,17 +1,13 @@
-<div class="overlay" [ngClass]="{ active: isOpen() }">
-  <div class="up-window" [ngClass]="class">
-    <button class="close-window" (click)="closeWindow()">×</button>
+<div class="overlay" [class.active]="isOpen()">
+  <div class="up-window" [ngClass]="animation">
+    <button class="close-window" (click)="closeWindow()">&times;</button>
     <div class="up-window-header">
-      <div>
-        <h2 class="up-window-title">{{ title }}</h2>
-        <p class="up-window-subtitle">{{ subtitle }}</p>
-      </div>
+      <h3 class="up-window-title">{{ title }}</h3>
+      <h4 class="up-window-subtitle">{{ subtitle }}</h4>
     </div>
-
     <div class="up-window-body">
       <ng-content></ng-content>
     </div>
-
     <div class="up-window-footer">
       <button class="btn btn-cancel" (click)="onCancel()">Cancel</button>
       <button class="btn btn-confirm" (click)="onConfirm()">Confirm</button>

@@ -26,16 +26,16 @@
         </button>
       </div>
       <hr />
-      <button class="button-modal-example" type="button" (click)="openModalExample()">
-        Open Modal Example
+      <button class="button-modal-example" type="button" (click)="openWindowExample()">
+        Open Window Example
       </button>
       <up-window-angular
-        [isOpen]="isModalOpenExample"
-        title="Modal Title"
-        subtitle="This is the subtitle of the modal."
-        size="medium"
+        [isOpen]="isWindowOpenExample"
+        title="Window Title"
+        subtitle="This is the subtitle of the window."
+        animation="scale"
       >
-        Modal Example content!
+        Window Example content!
       </up-window-angular>
     </div>
   </main>
