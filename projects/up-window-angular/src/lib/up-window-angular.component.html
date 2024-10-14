@@ -33,7 +33,7 @@
     </div>
     <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
       <button
-        class="btn"
+        class="btn btn-cancel"
         [ngClass]="getButtonClass(cancelType)"
         (click)="onCancel()"
         [attr.aria-label]="cancelText"
@@ -41,7 +41,7 @@
         {{ cancelText }}
       </button>
       <button
-        class="btn"
+        class="btn btn-confirm"
         [ngClass]="getButtonClass(confirmType)"
         (click)="onConfirm()"
         [attr.aria-label]="confirmText"
