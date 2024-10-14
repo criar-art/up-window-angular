@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/up-window-angular/browser",
+    "public": "dist/up-window-angular-spa/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
