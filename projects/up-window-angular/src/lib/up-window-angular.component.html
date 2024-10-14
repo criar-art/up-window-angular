@@ -7,7 +7,7 @@
   aria-describedby="dialog-description"
   aria-modal="true"
   [attr.aria-hidden]="!isOpen()"
-  (click)="!restrictMode && closeWindow()"
+  (click)="closeWindow('overlay')"
 >
   <div
     class="up-window"

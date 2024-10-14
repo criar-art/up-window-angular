@@ -52,6 +52,10 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: 1rem;
 
+  &.shake {
+    animation: shake 0.3s !important;
+  }
+
   &.fade {
     animation: up-window-fadeIn 0.3s forwards;
   }
@@ -303,4 +307,12 @@ body {
     opacity: 0;
     transform: translateY(-100%);
   }
+}
+
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-5px); }
+  50% { transform: translate(5px); }
+  75% { transform: translate(-5px); }
+  100% { transform: translate(0); }
 }
