@@ -38,16 +38,28 @@
         Fade Example content!
       </up-window-angular>
 
-      <button class="button-modal-example" type="button" (click)="openWindowExample('slide')">
-        Open Slide Example
+      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-left')">
+        Open Slide Left Example
       </button>
       <up-window-angular
-        [isOpen]="isWindowOpenSlide"
+        [isOpen]="isWindowOpenSlideLeft"
         title="Slide Window"
         subtitle="This window uses a slide animation."
-        animation="slide"
+        animation="slide-left"
       >
-        Slide Example content!
+        Slide Left Example content!
+      </up-window-angular>
+
+      <button class="button-modal-example" type="button" (click)="openWindowExample('slide-right')">
+        Open Slide Left Example
+      </button>
+      <up-window-angular
+        [isOpen]="isWindowOpenSlideRight"
+        title="Slide Window"
+        subtitle="This window uses a slide animation."
+        animation="slide-right"
+      >
+        Slide Right Example content!
       </up-window-angular>
 
       <button class="button-modal-example" type="button" (click)="openWindowExample('slide-up')">

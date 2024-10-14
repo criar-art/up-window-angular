@@ -29,14 +29,16 @@ export class AppComponent {
   codeString: string = '<up-window-angular />';
   isModalActive: boolean = false;
   isWindowOpenFade: WritableSignal<boolean> = signal(false);
-  isWindowOpenSlide: WritableSignal<boolean> = signal(false);
+  isWindowOpenSlideLeft: WritableSignal<boolean> = signal(false);
+  isWindowOpenSlideRight: WritableSignal<boolean> = signal(false);
   isWindowOpenSlideUp: WritableSignal<boolean> = signal(false);
   isWindowOpenSlideDown: WritableSignal<boolean> = signal(false);
   isWindowOpenScale: WritableSignal<boolean> = signal(false);
 
   openWindowExample(animation: string) {
     this.isWindowOpenFade.set(false);
-    this.isWindowOpenSlide.set(false);
+    this.isWindowOpenSlideLeft.set(false);
+    this.isWindowOpenSlideRight.set(false);
     this.isWindowOpenSlideUp.set(false);
     this.isWindowOpenSlideDown.set(false);
     this.isWindowOpenScale.set(false);
@@ -45,8 +47,11 @@ export class AppComponent {
       case 'fade':
         this.isWindowOpenFade.set(true);
         break;
-      case 'slide':
-        this.isWindowOpenSlide.set(true);
+      case 'slide-left':
+        this.isWindowOpenSlideLeft.set(true);
+        break;
+      case 'slide-right':
+        this.isWindowOpenSlideRight.set(true);
         break;
       case 'slide-up':
         this.isWindowOpenSlideUp.set(true);
