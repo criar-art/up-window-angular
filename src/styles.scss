@@ -81,10 +81,10 @@ body.darkmode {
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 .darkmode-button {
@@ -156,6 +156,18 @@ h2 {
   padding: 1rem;
 }
 
+.button-modal-example {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+  .material-symbols-outlined {
+    margin-right: 0.5rem;
+  }
+}
+
 .input-search {
   padding: 1rem;
   margin: 1rem 0;
@@ -169,6 +181,12 @@ h2 {
 
 .install {
   display: flex;
+}
+
+.examples {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .not-found {

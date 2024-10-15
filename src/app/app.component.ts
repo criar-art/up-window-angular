@@ -1,12 +1,14 @@
-import { Component, Renderer2, signal, WritableSignal } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { UpWindowAngularModule } from 'up-window-angular';
-import { UpWindowAngularModule } from '../../projects/up-window-angular/src/public-api';
+
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { ModalinstallComponent } from './components/modal-install/modal-install.component';
 import { DarkmodeComponent } from './components/darkmode/darkmode.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { FormsModule } from '@angular/forms';
+import { AnimationComponent } from './examples/animation/animation.component';
+import { ModeComponent } from './examples/mode/mode.component';
+import { ActionsComponent } from './examples/actions/actions.component';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +16,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     RouterOutlet,
     FormsModule,
-    UpWindowAngularModule,
     AppHeaderComponent,
     ModalinstallComponent,
     DarkmodeComponent,
+    AnimationComponent,
+    ActionsComponent,
+    ModeComponent,
     AppFooterComponent,
   ],
   templateUrl: './app.component.html',
@@ -28,57 +32,6 @@ export class AppComponent {
 
   codeString: string = '<up-window-angular />';
   isModalActive: boolean = false;
-  isWindowOpenFade: WritableSignal<boolean> = signal(false);
-  isWindowOpenSlideLeft: WritableSignal<boolean> = signal(false);
-  isWindowOpenSlideRight: WritableSignal<boolean> = signal(false);
-  isWindowOpenSlideUp: WritableSignal<boolean> = signal(false);
-  isWindowOpenSlideDown: WritableSignal<boolean> = signal(false);
-  isWindowOpenScale: WritableSignal<boolean> = signal(false);
-  isWindowOpenRestrict: WritableSignal<boolean> = signal(false);
-  isWindowOpenFullScreen: WritableSignal<boolean> = signal(false);
-  isWindowOpenBlur: WritableSignal<boolean> = signal(false);
-
-  openWindowExample(type: string) {
-    this.isWindowOpenFade.set(false);
-    this.isWindowOpenSlideLeft.set(false);
-    this.isWindowOpenSlideRight.set(false);
-    this.isWindowOpenSlideUp.set(false);
-    this.isWindowOpenSlideDown.set(false);
-    this.isWindowOpenScale.set(false);
-    this.isWindowOpenRestrict.set(false);
-    this.isWindowOpenFullScreen.set(false);
-    this.isWindowOpenBlur.set(false);
-
-    switch (type) {
-      case 'fade':
-        this.isWindowOpenFade.set(true);
-        break;
-      case 'slide-left':
-        this.isWindowOpenSlideLeft.set(true);
-        break;
-      case 'slide-right':
-        this.isWindowOpenSlideRight.set(true);
-        break;
-      case 'slide-up':
-        this.isWindowOpenSlideUp.set(true);
-        break;
-      case 'slide-down':
-        this.isWindowOpenSlideDown.set(true);
-        break;
-      case 'scale':
-        this.isWindowOpenScale.set(true);
-        break;
-      case 'restrict':
-        this.isWindowOpenRestrict.set(true);
-        break;
-      case 'fullscreen':
-        this.isWindowOpenFullScreen.set(true);
-        break;
-      case 'blur':
-        this.isWindowOpenBlur.set(true);
-        break;
-    }
-  }
 
   openModal(): void {
     this.isModalActive = true;
@@ -88,13 +41,5 @@ export class AppComponent {
   closeModal(): void {
     this.isModalActive = false;
     this.renderer.removeClass(document.body, 'modal-active');
-  }
-
-  handleConfirm() {
-    console.log('Confirmed from emit action!');
-  }
-
-  handleCancel() {
-    console.log('Cancelled from emit action!');
   }
 }

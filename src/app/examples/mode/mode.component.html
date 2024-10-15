@@ -1,0 +1,49 @@
+<div class="content">
+  <h2 class="content-title">Mode</h2>
+  <div class="examples">
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('restrict')"
+    >
+    <span class="material-symbols-outlined"> lock </span> Restrict
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenRestrict"
+      title="Restrict Window"
+      subtitle="This window mode Restrict."
+      [restrictMode]="true"
+      cancelType="danger"
+    >
+      Mode Restrict content!
+    </up-window-angular>
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('fullscreen')"
+    >
+    <span class="material-symbols-outlined"> fullscreen </span> FullScreen
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenFullScreen"
+      [fullScreen]="true"
+    >
+      Mode FullScreen content!
+    </up-window-angular>
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('blur')"
+    >
+    <span class="material-symbols-outlined"> deblur </span> Blur
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenBlur"
+      title="Blur Window"
+      subtitle="This window mode Blur."
+      [blur]="true"
+    >
+      Mode Blur content!
+    </up-window-angular>
+  </div>
+</div>
