@@ -49,85 +49,79 @@ export class WindowExampleComponent {
 
 ### Inputs
 
-1. **`@Input() title: string = 'Default Title';`**
+- **`@Input() title!: string;`**
    - Example: Set the title of the window.
    ```html
-   <up-window-angular title="My Custom Title" ...></up-window-angular>
+   <up-window-angular title="My Custom Title" />
    ```
 
-2. **`@Input() subtitle: string = 'Default Subtitle';`**
+- **`@Input() subtitle!: string;`**
    - Example: Set the subtitle of the window.
    ```html
-   <up-window-angular subtitle="This is a custom subtitle" ...></up-window-angular>
+   <up-window-angular subtitle="This is a custom subtitle" />
    ```
 
-3. **`@Input() size: string = 'medium';`**
-   - Example: Change the size of the window to large.
-   ```html
-   <up-window-angular size="large" ...></up-window-angular>
-   ```
-
-4. **`@Input() class: string | undefined;`**
+- **`@Input() class: string | undefined;`**
    - Example: Add custom CSS classes.
    ```html
-   <up-window-angular class="custom-window-class" ...></up-window-angular>
+   <up-window-angular class="custom-window-class" />
    ```
 
-5. **`@Input() isOpen: WritableSignal<boolean> = signal(false);`**
+- **`@Input() isOpen: WritableSignal<boolean> = signal(false);`**
    - Example: Control the visibility of the window.
    ```typescript
    this.isWindowOpenExample.set(true); // Opens the window
    ```
 
-6. **`@Input() animation: string = 'fade';`**
+- **`@Input() animation: string = 'fade';`**
    - Example: Set a different animation type.
    ```html
-   <up-window-angular animation="slide" ...></up-window-angular>
+   <up-window-angular animation="slide" />
    ```
 
-7. **`@Input() restrictMode: boolean = false;`**
+- **`@Input() restrictMode: boolean = false;`**
    - Example: Enable restricted mode.
    ```html
-   <up-window-angular restrictMode="true" ...></up-window-angular>
+   <up-window-angular restrictMode="true" />
    ```
 
-8. **`@Input() fullScreen: boolean = false;`**
+- **`@Input() fullScreen: boolean = false;`**
    - Example: Enable fullscreen mode for the window.
    ```html
-   <up-window-angular [fullScreen]="true" ...></up-window-angular>
+   <up-window-angular [fullScreen]="true" />
    ```
 
-9. **`@Input() confirmText: string = 'Confirm';`**
+- **`@Input() confirmText: string = 'Confirm';`**
    - Example: Customize the confirm button text.
    ```html
-   <up-window-angular confirmText="Agree" ...></up-window-angular>
+   <up-window-angular confirmText="Agree" />
    ```
 
-10. **`@Input() cancelText: string = 'Cancel';`**
+- **`@Input() cancelText: string = 'Cancel';`**
     - Example: Customize the cancel button text.
     ```html
-    <up-window-angular cancelText="Dismiss" ...></up-window-angular>
+    <up-window-angular cancelText="Dismiss" />
     ```
 
-11. **`@Input() confirmType: string = 'primary';`**
+- **`@Input() confirmType: string = 'primary';`**
     - Example: Set the style of the confirm button.
     ```html
-    <up-window-angular confirmType="success" ...></up-window-angular>
+    <up-window-angular confirmType="success" />
     ```
 
-12. **`@Input() cancelType: string = 'default';`**
+- **`@Input() cancelType: string = 'default';`**
     - Example: Set the style of the cancel button.
     ```html
-    <up-window-angular cancelType="danger" ...></up-window-angular>
+    <up-window-angular cancelType="danger" />
     ```
 
-13. **`@Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';`**
+- **`@Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';`**
     - Example: Align the buttons to the center.
     ```html
-    <up-window-angular buttonAlignment="center" ...></up-window-angular>
+    <up-window-angular buttonAlignment="center" />
     ```
 
-14. **`@Input() onConfirmClick: () => void = () => this.onConfirm();`**
+- **`@Input() onConfirmClick: () => void = () => this.onConfirm();`**
     - Example: Custom confirm action.
     ```typescript
     onConfirm() {
@@ -135,7 +129,7 @@ export class WindowExampleComponent {
     }
     ```
 
-15. **`@Input() onCancelClick: () => void = () => this.onCancel();`**
+- **`@Input() onCancelClick: () => void = () => this.onCancel();`**
     - Example: Custom cancel action.
     ```typescript
     onCancel() {
@@ -145,7 +139,7 @@ export class WindowExampleComponent {
 
 ### Outputs
 
-1. **`@Output() confirm = new EventEmitter<void>();`**
+- **`@Output() confirm = new EventEmitter<void>();`**
    - Example: Emit an event when confirm is clicked.
    ```typescript
    this.confirm.subscribe(() => {
@@ -153,7 +147,7 @@ export class WindowExampleComponent {
    });
    ```
 
-2. **`@Output() cancel = new EventEmitter<void>();`**
+- **`@Output() cancel = new EventEmitter<void>();`**
    - Example: Emit an event when cancel is clicked.
    ```typescript
    this.cancel.subscribe(() => {

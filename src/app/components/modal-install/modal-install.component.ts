@@ -39,7 +39,6 @@ import UpWindowAngularModule from 'up-window-angular';
   [isOpen]="isWindowOpenExample"
   title="Window Title"
   subtitle="This is the subtitle of the window."
-  size="medium"
 >
   Window Example content!
 </up-window-angular>\`,
