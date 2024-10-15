@@ -2,8 +2,6 @@
 
 An Angular library designed to create dynamic, customizable windows and window-based components for web applications. With a simple and intuitive API, UpWindow enables developers to easily integrate responsive windows, popups, and floating windows into their projects. It provides full control over window size, position, animations, and behavior, offering a flexible solution for creating engaging user interfaces.
 
-<video width="100%" controls> <source src="https://raw.githubusercontent.com/criar-art/up-window-angular/master/public/modo-restrict-window.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
-
 ## Install
 ```bash
 npm install up-window-angular
@@ -40,7 +38,6 @@ export class WindowExampleComponent {
   [isOpen]="isWindowOpenExample"
   title="Window Title"
   subtitle="This is the subtitle of the window."
-  size="medium"
 >
   Window Example content!
 </up-window-angular>
@@ -94,37 +91,43 @@ export class WindowExampleComponent {
    <up-window-angular restrictMode="true" ...></up-window-angular>
    ```
 
-8. **`@Input() confirmText: string = 'Confirm';`**
+8. **`@Input() fullScreen: boolean = false;`**
+   - Example: Enable fullscreen mode for the window.
+   ```html
+   <up-window-angular [fullScreen]="true" ...></up-window-angular>
+   ```
+
+9. **`@Input() confirmText: string = 'Confirm';`**
    - Example: Customize the confirm button text.
    ```html
    <up-window-angular confirmText="Agree" ...></up-window-angular>
    ```
 
-9. **`@Input() cancelText: string = 'Cancel';`**
-   - Example: Customize the cancel button text.
-   ```html
-   <up-window-angular cancelText="Dismiss" ...></up-window-angular>
-   ```
+10. **`@Input() cancelText: string = 'Cancel';`**
+    - Example: Customize the cancel button text.
+    ```html
+    <up-window-angular cancelText="Dismiss" ...></up-window-angular>
+    ```
 
-10. **`@Input() confirmType: string = 'primary';`**
+11. **`@Input() confirmType: string = 'primary';`**
     - Example: Set the style of the confirm button.
     ```html
     <up-window-angular confirmType="success" ...></up-window-angular>
     ```
 
-11. **`@Input() cancelType: string = 'default';`**
+12. **`@Input() cancelType: string = 'default';`**
     - Example: Set the style of the cancel button.
     ```html
     <up-window-angular cancelType="danger" ...></up-window-angular>
     ```
 
-12. **`@Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';`**
+13. **`@Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';`**
     - Example: Align the buttons to the center.
     ```html
     <up-window-angular buttonAlignment="center" ...></up-window-angular>
     ```
 
-13. **`@Input() onConfirmClick: () => void = () => this.onConfirm();`**
+14. **`@Input() onConfirmClick: () => void = () => this.onConfirm();`**
     - Example: Custom confirm action.
     ```typescript
     onConfirm() {
@@ -132,7 +135,7 @@ export class WindowExampleComponent {
     }
     ```
 
-14. **`@Input() onCancelClick: () => void = () => this.onCancel();`**
+15. **`@Input() onCancelClick: () => void = () => this.onCancel();`**
     - Example: Custom cancel action.
     ```typescript
     onCancel() {
@@ -157,6 +160,3 @@ export class WindowExampleComponent {
      console.log('Cancel action triggered');
    });
    ```
-
-### Summary
-The `up-window-angular` component offers a powerful way to create and manage modal windows in Angular applications, providing flexibility and ease of use through its customizable properties and events.
