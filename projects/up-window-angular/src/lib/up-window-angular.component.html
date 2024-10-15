@@ -23,15 +23,25 @@
         &times;
       </button>
     }
-    <div class="up-window-header">
-      <h3 id="dialog-title" class="up-window-title">{{ title }}</h3>
-      <h4 id="dialog-description" class="up-window-subtitle">
-        {{ subtitle }}
-      </h4>
-    </div>
+
+    @if(title || subtitle) {
+      <div class="up-window-header">
+        @if(title) {
+          <h3 id="dialog-title" class="up-window-title">{{ title }}</h3>
+        }
+
+        @if(subtitle) {
+          <h4 id="dialog-description" class="up-window-subtitle">
+            {{ subtitle }}
+          </h4>
+        }
+      </div>
+    }
+
     <div class="up-window-body">
       <ng-content></ng-content>
     </div>
+
     <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
       <button
         class="btn btn-cancel"

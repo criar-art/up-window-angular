@@ -25,9 +25,8 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class UpWindowAngularComponent implements OnInit, OnDestroy {
-  @Input() title: string = 'Default Title';
-  @Input() subtitle: string = 'Default Subtitle';
-  @Input() size: string = 'medium';
+  @Input() title?: string;
+  @Input() subtitle?: string;
   @Input() class: string | undefined;
   @Input() isOpen: WritableSignal<boolean> = signal(false);
   @Input() animation: string = 'fade';

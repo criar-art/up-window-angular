@@ -50,6 +50,7 @@
 .up-window-header {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .up-window-title,
@@ -67,7 +68,7 @@
 }
 
 .up-window-body {
-  margin: 20px 0;
+  margin: 0 0 20px;
 }
 
 .up-window-footer {
