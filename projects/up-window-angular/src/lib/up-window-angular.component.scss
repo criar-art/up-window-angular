@@ -32,7 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   opacity: 0;
   z-index: 999;
 
@@ -53,55 +53,55 @@ body {
   margin: 1rem;
 
   &.shake {
-    animation: shake 0.3s !important;
+    animation: up-window-shake 0.5s !important;
   }
 
   &.fade {
-    animation: up-window-fadeIn 0.3s forwards;
+    animation: up-window-fadeIn 0.5s forwards;
   }
 
   &.fade-out {
-    animation: up-window-fadeOut 0.3s forwards;
+    animation: up-window-fadeOut 0.5s forwards;
   }
 
   &.slide-left {
-    animation: up-window-slideLeftIn 0.3s forwards;
+    animation: up-window-slideLeftIn 0.5s forwards;
   }
 
   &.slide-left-out {
-    animation: up-window-slideLeftOut 0.3s forwards;
+    animation: up-window-slideLeftOut 0.5s forwards;
   }
 
   &.slide-right {
-    animation: up-window-slideRightIn 0.3s forwards;
+    animation: up-window-slideRightIn 0.5s forwards;
   }
 
   &.slide-right-out {
-    animation: up-window-slideRightOut 0.3s forwards;
+    animation: up-window-slideRightOut 0.5s forwards;
   }
 
   &.slide-up {
-    animation: up-window-slideUp 0.3s forwards;
+    animation: up-window-slideUp 0.5s forwards;
   }
 
   &.slide-up-out {
-    animation: up-window-slideUpOut 0.3s forwards;
+    animation: up-window-slideUpOut 0.5s forwards;
   }
 
   &.slide-down {
-    animation: up-window-slideDown 0.3s forwards;
+    animation: up-window-slideDown 0.5s forwards;
   }
 
   &.slide-down-out {
-    animation: up-window-slideDownOut 0.3s forwards;
+    animation: up-window-slideDownOut 0.5s forwards;
   }
 
   &.scale {
-    animation: up-window-scaleIn 0.3s forwards;
+    animation: up-window-scaleIn 0.5s forwards;
   }
 
   &.scale-out {
-    animation: up-window-scaleOut 0.3s forwards;
+    animation: up-window-scaleOut 0.5s forwards;
   }
 }
 
@@ -309,7 +309,7 @@ body {
   }
 }
 
-@keyframes shake {
+@keyframes up-window-shake {
   0% { transform: translate(0); }
   25% { transform: translate(-5px); }
   50% { transform: translate(5px); }
