@@ -144,7 +144,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   getClass() {
     return {
       ...(this.class ? { [this.class]: true } : {}),
-      [this.animation]: !this.closingAnimation && this.openingAnimation,
+      [this.animation]: this.openingAnimation && !this.closingAnimation,
       [`${this.animation}-out`]: this.closingAnimation,
       shake: this.shakeAnimation,
       fullscreen: this.fullScreen,
