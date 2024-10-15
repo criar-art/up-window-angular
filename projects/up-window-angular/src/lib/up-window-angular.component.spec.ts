@@ -151,4 +151,20 @@ describe('UpWindowAngularComponent', () => {
 
     expect(component.isOpen()).toBeTrue();
   }));
+
+  it('should apply fullscreen class when fullScreen is true', () => {
+    component.fullScreen = true;
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['fullscreen']).toBeTrue();
+  });
+
+  it('should not apply fullscreen class when fullScreen is false', () => {
+    component.fullScreen = false;
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['fullscreen']).toBeFalsy();
+  });
 });
