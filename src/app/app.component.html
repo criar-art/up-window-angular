@@ -159,6 +159,21 @@
         >
           Mode FullScreen content!
         </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('blur')"
+        >
+        <span class="material-symbols-outlined"> deblur </span> Blur
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenBlur"
+          title="Blur Window"
+          subtitle="This window mode Blur."
+          [blur]="true"
+        >
+          Mode Blur content!
+        </up-window-angular>
       </div>
     </div>
   </main>
