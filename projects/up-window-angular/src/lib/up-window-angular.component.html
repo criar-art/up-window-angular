@@ -14,14 +14,15 @@
     [ngClass]="getClass()"
     (click)="$event.stopPropagation()"
   >
-    <button
-      *ngIf="!restrictMode"
-      class="close-window"
-      aria-label="Close window"
-      (click)="closeWindow()"
-    >
-      &times;
-    </button>
+    @if(!restrictMode) {
+      <button
+        class="close-window"
+        aria-label="Close window"
+        (click)="closeWindow()"
+      >
+        &times;
+      </button>
+    }
     <div class="up-window-header">
       <h3 id="dialog-title" class="up-window-title">{{ title }}</h3>
       <h4 id="dialog-description" class="up-window-subtitle">
