@@ -145,14 +145,13 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   }
 
   getButtonClass(type: string) {
-    switch (type) {
-      case 'primary':
-        return 'btn-primary';
-      case 'secondary':
-        return 'btn-secondary';
-      default:
-        return 'btn-default';
-    }
+    const buttonClasses: { [key: string]: string } = {
+      primary: 'btn-primary',
+      secondary: 'btn-secondary',
+      danger: 'btn-danger',
+    };
+
+    return buttonClasses[type] || 'btn-default';
   }
 
   onCancel() {

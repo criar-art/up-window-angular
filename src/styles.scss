@@ -79,6 +79,14 @@ body.darkmode {
   background-color: #242424;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 .darkmode-button {
   margin: 2rem 1rem;
   position: fixed;

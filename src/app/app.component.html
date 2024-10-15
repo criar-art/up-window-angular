@@ -34,7 +34,7 @@
           type="button"
           (click)="openWindowExample('fade')"
         >
-          Fade
+          <span class="material-symbols-outlined"> settings </span> Fade
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenFade"
@@ -52,7 +52,7 @@
           type="button"
           (click)="openWindowExample('slide-left')"
         >
-          Slide Left
+          <span class="material-symbols-outlined"> arrow_back </span> Slide Left
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenSlideLeft"
@@ -68,7 +68,7 @@
           type="button"
           (click)="openWindowExample('slide-right')"
         >
-          Slide Right
+          <span class="material-symbols-outlined"> arrow_forward </span> Slide Right
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenSlideRight"
@@ -84,7 +84,7 @@
           type="button"
           (click)="openWindowExample('slide-up')"
         >
-          Slide Up
+          <span class="material-symbols-outlined"> arrow_upward </span> Slide Up
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenSlideUp"
@@ -100,7 +100,7 @@
           type="button"
           (click)="openWindowExample('slide-down')"
         >
-          Slide Down
+          <span class="material-symbols-outlined"> arrow_downward </span> Slide Down
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenSlideDown"
@@ -115,7 +115,7 @@
           type="button"
           (click)="openWindowExample('scale')"
         >
-          Scale
+          <span class="material-symbols-outlined"> settings </span> Scale
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenScale"
@@ -135,13 +135,14 @@
           type="button"
           (click)="openWindowExample('restrict')"
         >
-          Mode Restrict
+        <span class="material-symbols-outlined"> lock </span> Restrict
         </button>
         <up-window-angular
           [isOpen]="isWindowOpenRestrict"
           title="Restrict Window"
           subtitle="This window mode Restrict."
           [restrictMode]="true"
+          cancelType="danger"
         >
           Mode Restrict content!
         </up-window-angular>
