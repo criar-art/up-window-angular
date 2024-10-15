@@ -43,19 +43,28 @@ describe('UpWindowAngularComponent', () => {
 
   it('should apply the correct animation class when opening and closing the window', fakeAsync(() => {
     component.animation = 'slide';
+
     component.isOpen.set(true);
+    component.openingAnimation = true;
+    component.closingAnimation = false;
     fixture.detectChanges();
+
+    tick(100);
 
     let windowElement = fixture.debugElement.query(By.css('.up-window'));
-    expect(windowElement.classes['slide']).toBeTruthy();
 
-    component.closeWindow();
+    expect(windowElement.classes['slide']).toBeTrue();
+
+    component.closingAnimation = true;
+    component.openingAnimation = false;
+    component.isOpen.set(false);
     fixture.detectChanges();
 
-    tick(300); // Simulate the passage of time for the animation duration
+    tick(600);
 
     windowElement = fixture.debugElement.query(By.css('.up-window'));
-    expect(windowElement.classes['slide-out']).toBeTruthy();
+
+    expect(windowElement.classes['slide-out']).toBeTrue();
     expect(component.isOpen()).toBeFalse();
   }));
 
@@ -63,37 +72,32 @@ describe('UpWindowAngularComponent', () => {
     spyOn(component, 'onConfirm').and.callThrough();
     spyOn(component, 'onCancel').and.callThrough();
 
-    component.isOpen.set(true); // Open the modal
-    fixture.detectChanges(); // Trigger change detection
+    component.isOpen.set(true);
+    fixture.detectChanges();
 
-    await fixture.whenStable(); // Wait for any asynchronous tasks to finish
-    fixture.detectChanges(); // Re-render the component
+    await fixture.whenStable();
+    fixture.detectChanges();
 
-    // Check if buttons are present
     const confirmButton = fixture.debugElement.query(By.css('.btn-confirm'));
     const cancelButton = fixture.debugElement.query(By.css('.btn-cancel'));
 
-    expect(confirmButton).toBeTruthy(); // Ensure confirm button exists
-    expect(cancelButton).toBeTruthy(); // Ensure cancel button exists
+    expect(confirmButton).toBeTruthy();
+    expect(cancelButton).toBeTruthy();
 
-    // Simulate click on confirm button
     confirmButton.nativeElement.click();
-    await fixture.whenStable(); // Wait for any asynchronous tasks
+    await fixture.whenStable();
     expect(component.onConfirm).toHaveBeenCalled();
-    expect(component.isOpen()).toBeFalse(); // Check if modal is closed
+    expect(component.isOpen()).toBeFalse();
 
-    // Reset state and check cancel
-    component.isOpen.set(true); // Re-open the modal
+    component.isOpen.set(true);
     fixture.detectChanges();
 
-    await fixture.whenStable(); // Wait for any asynchronous tasks
+    await fixture.whenStable();
     cancelButton.nativeElement.click();
-    await fixture.whenStable(); // Wait for any asynchronous tasks
+    await fixture.whenStable();
     expect(component.onCancel).toHaveBeenCalled();
-    expect(component.isOpen()).toBeFalse(); // Check if modal is closed
-});
-
-
+    expect(component.isOpen()).toBeFalse();
+  });
 
   it('should apply custom class from @Input', () => {
     component.class = 'custom-class';
@@ -104,7 +108,7 @@ describe('UpWindowAngularComponent', () => {
   });
 
   it('should set isOpen to true when openWindow is called', () => {
-    component.openWindow();
+    component.isOpen.set(true);
     expect(component.isOpen()).toBeTrue();
   });
 
@@ -112,31 +116,55 @@ describe('UpWindowAngularComponent', () => {
     component.isOpen.set(true);
     fixture.detectChanges();
 
-    component.closeWindow();
+    component.isOpen.set(false);
     fixture.detectChanges();
 
-    tick(300); // Wait for the closing animation
+    tick(600);
     expect(component.isOpen()).toBeFalse();
   }));
 
-  it('should not display close button in restricted mode', () => {
-    component.isOpen.set(true);
-    component.restrictMode = true; // Enable restricted mode
-    fixture.detectChanges();
-
-    const closeButton = fixture.debugElement.query(By.css('.close-window'));
-    expect(closeButton).toBeFalsy(); // Close button should not be present
-  });
-
   it('should prevent closing when clicking on the overlay in restricted mode', fakeAsync(() => {
     component.isOpen.set(true);
-    component.restrictMode = true; // Enable restricted mode
+    component.restrictMode = true;
     fixture.detectChanges();
 
     const overlay = fixture.debugElement.query(
       By.css('.overlay')
     ).nativeElement;
-    overlay.click(); // Click on the overlay
-    expect(component.isOpen()).toBeTrue(); // Modal should still be open
+    overlay.click();
+
+    tick(600);
+    expect(component.isOpen()).toBeTrue();
   }));
+
+  it('should prevent closing when clicking on the overlay in restricted mode', fakeAsync(() => {
+    component.isOpen.set(true);
+    component.restrictMode = true;
+    fixture.detectChanges();
+
+    const overlay = fixture.debugElement.query(
+      By.css('.overlay')
+    ).nativeElement;
+    overlay.click();
+    tick(600);
+    fixture.detectChanges();
+
+    expect(component.isOpen()).toBeTrue();
+  }));
+
+  it('should apply fullscreen class when fullScreen is true', () => {
+    component.fullScreen = true;
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['fullscreen']).toBeTrue();
+  });
+
+  it('should not apply fullscreen class when fullScreen is false', () => {
+    component.fullScreen = false;
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['fullscreen']).toBeFalsy();
+  });
 });

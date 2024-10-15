@@ -146,6 +146,21 @@
         >
           Mode Restrict content!
         </up-window-angular>
+        <button
+          class="button-modal-example"
+          type="button"
+          (click)="openWindowExample('fullscreen')"
+        >
+        <span class="material-symbols-outlined"> fullscreen </span> FullScreen
+        </button>
+        <up-window-angular
+          [isOpen]="isWindowOpenFullScreen"
+          title="FullScreen Window"
+          subtitle="This window mode FullScreen."
+          [fullScreen]="true"
+        >
+          Mode FullScreen content!
+        </up-window-angular>
       </div>
     </div>
   </main>
