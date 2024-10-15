@@ -35,6 +35,7 @@ export class AppComponent {
   isWindowOpenSlideDown: WritableSignal<boolean> = signal(false);
   isWindowOpenScale: WritableSignal<boolean> = signal(false);
   isWindowOpenRestrict: WritableSignal<boolean> = signal(false);
+  isWindowOpenFullScreen: WritableSignal<boolean> = signal(false);
 
   openWindowExample(type: string) {
     this.isWindowOpenFade.set(false);
@@ -44,6 +45,7 @@ export class AppComponent {
     this.isWindowOpenSlideDown.set(false);
     this.isWindowOpenScale.set(false);
     this.isWindowOpenRestrict.set(false);
+    this.isWindowOpenFullScreen.set(false);
 
     switch (type) {
       case 'fade':
@@ -66,6 +68,9 @@ export class AppComponent {
         break;
       case 'restrict':
         this.isWindowOpenRestrict.set(true);
+        break;
+      case 'fullscreen':
+        this.isWindowOpenFullScreen.set(true);
         break;
     }
   }
