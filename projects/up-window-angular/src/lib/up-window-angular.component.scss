@@ -53,11 +53,11 @@ body {
   margin: 1rem;
 
   &.shake {
-    animation: up-window-shake 0.5s !important;
+    animation: up-window-shake 0.3s !important;
   }
 
   &.fade {
-    animation: up-window-fadeIn 0.5s forwards;
+    animation: up-window-fadeIn 0.3s forwards;
   }
 
   &.fade-out {
@@ -116,6 +116,7 @@ body {
 }
 
 .up-window-title {
+  line-height: 1.6rem;
   font-size: 1.6rem;
 }
 

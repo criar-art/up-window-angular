@@ -88,7 +88,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
     this.shakeAnimation = true;
     setTimeout(() => {
       this.shakeAnimation = false;
-    }, 500);
+    }, 300);
   }
 
   trapFocus(event: KeyboardEvent) {
@@ -112,14 +112,14 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
     this.openingAnimation = true;
     setTimeout(() => {
       this.openingAnimation = false;
-    }, 300);
+    }, 400);
   }
 
   startClosingAnimation() {
     this.closingAnimation = true;
     setTimeout(() => {
       this.closingAnimation = false;
-    }, 300);
+    }, 400);
   }
 
   closeWindow(from?: string) {
@@ -131,7 +131,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.isOpen.set(false);
         this.closingAnimation = false;
-      }, 300);
+      }, 400);
     }
   }
 
