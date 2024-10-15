@@ -167,4 +167,20 @@ describe('UpWindowAngularComponent', () => {
     const windowElement = fixture.debugElement.query(By.css('.up-window'));
     expect(windowElement.classes['fullscreen']).toBeFalsy();
   });
+
+  it('should apply blur class when blur input is true', () => {
+    component.blur = true;
+    fixture.detectChanges();
+
+    const overlayElement = fixture.debugElement.query(By.css('.overlay'));
+    expect(overlayElement.classes['blur']).toBeTrue();
+  });
+
+  it('should not apply blur class when blur input is false', () => {
+    component.blur = false;
+    fixture.detectChanges();
+
+    const overlayElement = fixture.debugElement.query(By.css('.overlay'));
+    expect(overlayElement.classes['blur']).toBeFalsy();
+  });
 });

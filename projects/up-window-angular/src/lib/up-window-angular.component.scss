@@ -17,6 +17,10 @@
     display: flex;
     opacity: 1;
   }
+
+  &.blur {
+    backdrop-filter: blur(6px);
+  }
 }
 
 .up-window {
