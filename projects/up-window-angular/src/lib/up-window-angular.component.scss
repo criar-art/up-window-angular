@@ -45,7 +45,7 @@ body {
 .up-window {
   color: var(--up-window-color-text);
   background-color: var(--up-window-background);
-  border-radius: 8px;
+  border-radius: 1rem;
   max-width: 500px;
   width: 100%;
   padding: 20px;
@@ -171,10 +171,11 @@ body {
 }
 
 .btn {
-  padding: 8px 16px;
+  padding: 1rem 1.5rem;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
+  border-radius: .7rem;
+  font-weight: bold;
 }
 
 @keyframes up-window-fadeIn {
