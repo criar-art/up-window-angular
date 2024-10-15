@@ -1,0 +1,38 @@
+.close-window {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--up-window-color-text);
+  z-index: 99;
+}
+
+.btn-default {
+  background-color: var(--up-window-default);
+}
+
+.btn-primary {
+  background-color: var(--up-window-primary);
+  color: var(--up-window-text);
+}
+
+.btn-secondary {
+  background-color: var(--up-window-secondary);
+  color: var(--up-window-text);
+}
+
+.btn-danger {
+  background-color: #c40707;
+  color: var(--up-window-text);
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.7rem;
+  font-weight: bold;
+}

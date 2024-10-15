@@ -1,0 +1,22 @@
+body {
+  --up-window-color-text: #000;
+  --up-window-default: #ccc;
+  --up-window-primary: #209665;
+  --up-window-secondary: #116b8f;
+  --up-window-background: #fff;
+  --up-window-background-tooltip: #444;
+  --up-window-shadow-tooltip: rgba(0, 0, 0, 0.2);
+  --up-window-text: #fff;
+  --up-window-background-svg: #000;
+  &.darkmode {
+    --up-window-color-text: #fff;
+    --up-window-default: #ccc;
+    --up-window-primary: #42af82;
+    --up-window-secondary: #0d7eaa;
+    --up-window-background: #222;
+    --up-window-background-tooltip: #fff;
+    --up-window-shadow-tooltip: rgba(0, 0, 0, 0.2);
+    --up-window-text: #000;
+    --up-window-background-svg: #fff;
+  }
+}

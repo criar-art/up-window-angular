@@ -16,7 +16,12 @@ import {
 @Component({
   selector: 'up-window-angular',
   templateUrl: './up-window-angular.component.html',
-  styleUrls: ['./up-window-angular.component.scss'],
+  styleUrls: [
+    './up-window-angular.variables.scss',
+    './up-window-angular.animation.scss',
+    './up-window-angular.component.scss',
+    './up-window-angular.btn.scss',
+  ],
   encapsulation: ViewEncapsulation.None,
 })
 export class UpWindowAngularComponent implements OnInit, OnDestroy {
