@@ -4,7 +4,7 @@ import {
   fakeAsync,
   tick,
 } from '@angular/core/testing';
-import { UpWindowAngularComponent } from './up-window-angular.component';
+import { UpWindowAngularComponent } from '../up-window-angular.component';
 import { By } from '@angular/platform-browser';
 
 describe('UpWindowAngularComponent', () => {

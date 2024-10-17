@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UpWindowAngularComponent } from './up-window-angular.component';
+import { UpWindowAngularComponent } from '../up-window-angular.component';
 import { By } from '@angular/platform-browser';
 import { Component, signal, WritableSignal } from '@angular/core';
 
