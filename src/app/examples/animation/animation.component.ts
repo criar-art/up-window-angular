@@ -15,6 +15,8 @@ export class AnimationComponent {
   isWindowOpenSlideUp: WritableSignal<boolean> = signal(false);
   isWindowOpenSlideDown: WritableSignal<boolean> = signal(false);
   isWindowOpenScale: WritableSignal<boolean> = signal(false);
+  isWindowOpenRotateLeft: WritableSignal<boolean> = signal(false);
+  isWindowOpenRotateRight: WritableSignal<boolean> = signal(false);
 
   openWindowExample(type: string) {
     this.isWindowOpenFade.set(false);
@@ -23,6 +25,8 @@ export class AnimationComponent {
     this.isWindowOpenSlideUp.set(false);
     this.isWindowOpenSlideDown.set(false);
     this.isWindowOpenScale.set(false);
+    this.isWindowOpenRotateLeft.set(false);
+    this.isWindowOpenRotateRight.set(false);
 
     switch (type) {
       case 'fade':
@@ -42,6 +46,12 @@ export class AnimationComponent {
         break;
       case 'scale':
         this.isWindowOpenScale.set(true);
+        break;
+      case 'rotate-left':
+        this.isWindowOpenRotateLeft.set(true);
+        break;
+      case 'rotate-right':
+        this.isWindowOpenRotateRight.set(true);
         break;
     }
   }

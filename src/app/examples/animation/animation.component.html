@@ -97,5 +97,37 @@
     >
       Scale content!
     </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('rotate-left')"
+    >
+      <span class="material-symbols-outlined"> &#xe419; </span> Rotate Left
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenRotateLeft"
+      title="Rotate Left Window"
+      subtitle="This window uses a rotate-left animation."
+      animation="rotate-left"
+    >
+      Rotate Left content!
+    </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('rotate-right')"
+    >
+      <span class="material-symbols-outlined"> &#xe41a; </span> Rotate Right
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenRotateRight"
+      title="Rotate Right Window"
+      subtitle="This window uses a rotate-right animation."
+      animation="rotate-right"
+    >
+      Rotate Right content!
+    </up-window-angular>
   </div>
 </div>
