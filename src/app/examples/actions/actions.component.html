@@ -30,5 +30,25 @@
         <span>Custom footer example text.</span>
       </div>
     </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('hidden')"
+    >
+      <span class="material-symbols-outlined"> &#xf3c3; </span> Hidden Actions
+    </button>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenHidden"
+      title="Hidden Actions Example"
+      subtitle="No actions available"
+      buttonAlignment="start"
+      [hiddenActions]="true"
+    >
+      <p>
+        This window demonstrates how to use the hidden actions feature. No footer buttons will be displayed.
+      </p>
+    </up-window-angular>
   </div>
 </div>
