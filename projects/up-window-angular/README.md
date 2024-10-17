@@ -174,3 +174,26 @@ export class WindowExampleComponent {
      console.log('Cancel action triggered');
    });
    ```
+
+### ng-content for Custom Footer
+
+You can project custom content into the footer of the `up-window-angular` component using `ng-template`. This allows for more flexible designs in your window. Here’s how to use it:
+
+#### Example of Custom Footer
+
+```html
+<up-window-angular
+  [isOpen]="isWindowOpenExample"
+  title="Window Title"
+  subtitle="This is the subtitle of the window."
+>
+  Window Example content!
+
+  <ng-template footer>
+    <button class="custom-btn" (click)="isWindowOpenExample.set(false)">
+      Close
+    </button>
+    <span>Custom footer content!</span>
+  </ng-template>
+</up-window-angular>
+```
