@@ -1,6 +1,6 @@
 # up-window-angular
 
-An Angular library designed to create dynamic, customizable windows and window-based components for web applications. With a simple and intuitive API, UpWindow enables developers to easily integrate responsive windows, popups, and floating windows into their projects. It provides full control over window size, position, animations, and behavior, offering a flexible solution for creating engaging user interfaces.
+An Angular library designed to create dynamic, customizable windows and window-based components for web applications. With a simple and intuitive API, UpWindow enables developers to easily integrate responsive windows, popups, floating windows, and drawers into their projects. It provides full control over window size, position, animations, and behavior, offering a flexible solution for creating engaging user interfaces.
 
 ## Install
 
@@ -91,6 +91,12 @@ export class WindowExampleComponent {
    - Example: Enable fullscreen mode for the window.
    ```html
    <up-window-angular [fullScreen]="true" />
+   ```
+
+- **`@Input() drawer: 'left' | 'right' | 'top' | 'bottom' = 'left';`**
+   - Example: Set the position of the drawer when in drawer mode.
+   ```html
+   <up-window-angular drawer="right" />
    ```
 
 - **`@Input() confirmText: string = 'Confirm';`**
