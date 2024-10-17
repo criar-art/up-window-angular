@@ -160,11 +160,12 @@ h2 {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  min-width: 100px;
-  max-width: 200px;
   white-space: nowrap;
   .material-symbols-outlined {
     margin-right: 0.5rem;
+  }
+  .material-symbols-outlined.plus {
+    margin: 0 0.5rem;
   }
 }
 
