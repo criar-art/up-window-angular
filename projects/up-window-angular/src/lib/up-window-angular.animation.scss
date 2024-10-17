@@ -50,6 +50,21 @@
   &.scale-out {
     animation: up-window-scaleOut 0.5s forwards;
   }
+  &.rotate-left {
+    animation: up-window-rotateLeft 0.5s forwards;
+  }
+
+  &.rotate-left-out {
+    animation: up-window-rotateLeftOut 0.5s forwards;
+  }
+
+  &.rotate-right {
+    animation: up-window-rotateRight 0.5s forwards;
+  }
+
+  &.rotate-right-out {
+    animation: up-window-rotateRightOut 0.5s forwards;
+  }
 }
 
 @keyframes up-window-fadeIn {
@@ -181,6 +196,50 @@
   to {
     opacity: 0;
     transform: translateY(-100%);
+  }
+}
+
+@keyframes up-window-rotateLeft {
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-360deg) scale(1);
+  }
+}
+
+@keyframes up-window-rotateLeftOut {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(-360deg) scale(0.5);
+  }
+}
+
+@keyframes up-window-rotateRight {
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes up-window-rotateRightOut {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(360deg) scale(0.5);
   }
 }
 
