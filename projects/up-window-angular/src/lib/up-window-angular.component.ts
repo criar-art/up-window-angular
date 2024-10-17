@@ -33,6 +33,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() restrictMode: boolean = false;
   @Input() fullScreen: boolean = false;
   @Input() blur: boolean = false;
+  @Input() grayscale: boolean = false;
   @Input() hiddenActions: boolean = false;
   @Input() confirmText: string = 'Confirm';
   @Input() cancelText: string = 'Cancel';
@@ -169,6 +170,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
       shake: this.shakeAnimation,
       fullscreen: this.fullScreen,
       blur: this.blur,
+      grayscale: this.grayscale,
     };
   }
 

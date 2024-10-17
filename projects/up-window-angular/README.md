@@ -3,6 +3,7 @@
 An Angular library designed to create dynamic, customizable windows and window-based components for web applications. With a simple and intuitive API, UpWindow enables developers to easily integrate responsive windows, popups, and floating windows into their projects. It provides full control over window size, position, animations, and behavior, offering a flexible solution for creating engaging user interfaces.
 
 ## Install
+
 ```bash
 npm install up-window-angular
 ```
@@ -44,6 +45,7 @@ export class WindowExampleComponent {
 ```
 
 ### Component Setup
+
 - In the `WindowExampleComponent`, a `WritableSignal<boolean>` named `isWindowOpenExample` is defined, initialized to `false`.
 - The `openWindowExample` method sets `isWindowOpenExample` to `true`, which opens the window.
 
@@ -141,6 +143,18 @@ export class WindowExampleComponent {
    - Example: Control the visibility of action buttons (confirm and cancel). When set to `true`, the action buttons will not be displayed.
    ```html
    <up-window-angular [hiddenActions]="true" />
+   ```
+
+- **`@Input() blur: boolean = false;`**
+   - Example: Enable blur effect for the window.
+   ```html
+   <up-window-angular [blur]="true" />
+   ```
+
+- **`@Input() grayscale: boolean = false;`**
+   - Example: Enable grayscale effect for the window.
+   ```html
+   <up-window-angular [grayscale]="true" />
    ```
 
 ### Outputs
