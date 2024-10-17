@@ -124,5 +124,22 @@
     >
       Mode Blur content!
     </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('grayscale')"
+    >
+      <span class="material-symbols-outlined"> &#xe3f6; </span> Grayscale
+    </button>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenGrayscale"
+      title="Grayscale Window"
+      subtitle="This window mode Grayscale."
+      [grayscale]="true"
+    >
+      Mode Grayscale content!
+    </up-window-angular>
   </div>
 </div>
