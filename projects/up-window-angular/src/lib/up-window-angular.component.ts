@@ -182,14 +182,12 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   }
 
   onCancel() {
-    console.log('Confirmed!');
-    this.confirm.emit();
+    this.cancel.emit();
     this.closeWindow();
   }
 
   onConfirm() {
-    console.log('Cancelled!');
-    this.cancel.emit();
+    this.confirm.emit();
     this.closeWindow();
   }
 }
