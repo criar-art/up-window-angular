@@ -60,9 +60,11 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
       if (this.isOpen()) {
         this.addModalToBody();
         this.startOpeningAnimation();
+        document.body.classList.add('no-scroll');
       } else {
         this.startClosingAnimation();
         this.removeModalFromBody();
+        document.body.classList.remove('no-scroll');
       }
     });
   }

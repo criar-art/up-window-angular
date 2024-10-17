@@ -125,3 +125,7 @@
     justify-content: center;
   }
 }
+
+body.no-scroll {
+  overflow: hidden !important;
+}
