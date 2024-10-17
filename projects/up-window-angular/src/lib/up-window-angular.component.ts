@@ -11,6 +11,7 @@ import {
   ElementRef,
   ViewChild,
   effect,
+  ChangeDetectorRef,
 } from '@angular/core';
 
 @Component({
@@ -55,7 +56,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
 
   @ViewChild('modal') modal!: ElementRef;
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
     effect(() => {
       if (this.isOpen()) {
         this.addModalToBody();
@@ -86,6 +87,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
           this.focusableElements[this.focusableElements.length - 1];
       }
     }
+    this.cdr.detectChanges();
   }
 
   addModalToBody() {
