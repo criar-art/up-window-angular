@@ -14,9 +14,9 @@ jobs:
       - name: Install dependencies and build
         run: npm ci && npm run build
       - name: Run unit tests
-        run: npm run test
+        run: npm run test -- --no-watch --no-progress
       - name: Run module tests
-        run: npm run test:module
+        run: npm run test:module -- --no-watch --no-progress
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
