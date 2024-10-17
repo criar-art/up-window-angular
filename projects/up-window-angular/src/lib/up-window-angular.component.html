@@ -15,7 +15,7 @@
     [ngClass]="getClass()"
     (click)="$event.stopPropagation()"
   >
-    @if(!restrictMode) {
+    @if(!restrictMode || hiddenActions) {
       <button
         class="close-window"
         aria-label="Close window"
@@ -43,23 +43,25 @@
       <ng-content></ng-content>
     </div>
 
-    <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
-      <button
-        class="btn btn-cancel"
-        [ngClass]="getButtonClass(cancelType)"
-        (click)="onCancel()"
-        [attr.aria-label]="cancelText"
-      >
-        {{ cancelText }}
-      </button>
-      <button
-        class="btn btn-confirm"
-        [ngClass]="getButtonClass(confirmType)"
-        (click)="onConfirm()"
-        [attr.aria-label]="confirmText"
-      >
-        {{ confirmText }}
-      </button>
-    </div>
+    @if(!hiddenActions) {
+      <div class="up-window-footer" [ngClass]="'align-' + buttonAlignment">
+        <button
+          class="btn btn-cancel"
+          [ngClass]="getButtonClass(cancelType)"
+          (click)="onCancel()"
+          [attr.aria-label]="cancelText"
+        >
+          {{ cancelText }}
+        </button>
+        <button
+          class="btn btn-confirm"
+          [ngClass]="getButtonClass(confirmType)"
+          (click)="onConfirm()"
+          [attr.aria-label]="confirmText"
+        >
+          {{ confirmText }}
+        </button>
+      </div>
+    }
   </div>
 </div>

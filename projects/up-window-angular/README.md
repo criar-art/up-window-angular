@@ -98,44 +98,50 @@ export class WindowExampleComponent {
    ```
 
 - **`@Input() cancelText: string = 'Cancel';`**
-    - Example: Customize the cancel button text.
-    ```html
-    <up-window-angular cancelText="Dismiss" />
-    ```
+   - Example: Customize the cancel button text.
+   ```html
+   <up-window-angular cancelText="Dismiss" />
+   ```
 
 - **`@Input() confirmType: string = 'primary';`**
-    - Example: Set the style of the confirm button.
-    ```html
-    <up-window-angular confirmType="success" />
-    ```
+   - Example: Set the style of the confirm button.
+   ```html
+   <up-window-angular confirmType="success" />
+   ```
 
 - **`@Input() cancelType: string = 'default';`**
-    - Example: Set the style of the cancel button.
-    ```html
-    <up-window-angular cancelType="danger" />
-    ```
+   - Example: Set the style of the cancel button.
+   ```html
+   <up-window-angular cancelType="danger" />
+   ```
 
 - **`@Input() buttonAlignment: 'start' | 'end' | 'center' = 'end';`**
-    - Example: Align the buttons to the center.
-    ```html
-    <up-window-angular buttonAlignment="center" />
-    ```
+   - Example: Align the buttons to the center.
+   ```html
+   <up-window-angular buttonAlignment="center" />
+   ```
 
 - **`@Input() onConfirmClick: () => void = () => this.onConfirm();`**
-    - Example: Custom confirm action.
-    ```typescript
-    onConfirm() {
-      console.log('Confirmed!');
-    }
-    ```
+   - Example: Custom confirm action.
+   ```typescript
+   onConfirm() {
+     console.log('Confirmed!');
+   }
+   ```
 
 - **`@Input() onCancelClick: () => void = () => this.onCancel();`**
-    - Example: Custom cancel action.
-    ```typescript
-    onCancel() {
-      console.log('Cancelled!');
-    }
-    ```
+   - Example: Custom cancel action.
+   ```typescript
+   onCancel() {
+     console.log('Cancelled!');
+   }
+   ```
+
+- **`@Input() hiddenActions: boolean = false;`**
+   - Example: Control the visibility of action buttons (confirm and cancel). When set to `true`, the action buttons will not be displayed.
+   ```html
+   <up-window-angular [hiddenActions]="true" />
+   ```
 
 ### Outputs
 
