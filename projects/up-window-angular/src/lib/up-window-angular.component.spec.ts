@@ -41,6 +41,36 @@ describe('UpWindowAngularComponent', () => {
     expect(subtitleElement.textContent).toContain('Test Subtitle');
   });
 
+  it('should append modal to body when isOpen is true', fakeAsync(() => {
+    component.isOpen.set(false);
+    fixture.detectChanges();
+    expect(document.body.querySelector('.up-window')).toBeNull();
+
+    component.isOpen.set(true);
+    fixture.detectChanges();
+    tick(100);
+    expect(document.body.querySelector('.up-window')).toBeTruthy();
+
+    component.isOpen.set(false);
+    fixture.detectChanges();
+    tick(400);
+    expect(document.body.querySelector('.up-window')).toBeNull();
+  }));
+
+  it('should not reappend modal if it is already in the body', fakeAsync(() => {
+    component.isOpen.set(true);
+    fixture.detectChanges();
+    tick(600);
+
+    spyOn(component, 'addModalToBody').and.callThrough();
+
+    component.addModalToBody();
+    fixture.detectChanges();
+
+    expect(component.addModalToBody).toHaveBeenCalledTimes(1);
+    expect(document.body.querySelectorAll('.up-window').length).toBe(1);
+  }));
+
   it('should apply the correct animation class when opening and closing the window', fakeAsync(() => {
     component.animation = 'slide';
 

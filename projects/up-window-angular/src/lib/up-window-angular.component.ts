@@ -55,9 +55,13 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
 
   constructor() {
     effect(() => {
-      this.isOpen()
-        ? this.startOpeningAnimation()
-        : this.startClosingAnimation();
+      if (this.isOpen()) {
+        this.addModalToBody();
+        this.startOpeningAnimation();
+      } else {
+        this.startClosingAnimation();
+        this.removeModalFromBody();
+      }
     });
   }
 
@@ -67,6 +71,8 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (this.modal) {
+      document.body.appendChild(this.modal.nativeElement);
+
       this.focusableElements = this.modal.nativeElement.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
@@ -75,6 +81,18 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
         this.lastFocusableElement =
           this.focusableElements[this.focusableElements.length - 1];
       }
+    }
+  }
+
+  addModalToBody() {
+    if (this.modal && this.modal.nativeElement.parentNode !== document.body) {
+      document.body.appendChild(this.modal.nativeElement);
+    }
+  }
+
+  removeModalFromBody() {
+    if (this.modal && this.modal.nativeElement.parentNode === document.body) {
+      document.body.removeChild(this.modal.nativeElement);
     }
   }
 
@@ -111,6 +129,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.removeModalFromBody();
     document.removeEventListener('keydown', this.handleKeydown.bind(this));
   }
 
