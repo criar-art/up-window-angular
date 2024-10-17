@@ -33,6 +33,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() restrictMode: boolean = false;
   @Input() fullScreen: boolean = false;
   @Input() blur: boolean = false;
+  @Input() hiddenActions: boolean = false;
   @Input() confirmText: string = 'Confirm';
   @Input() cancelText: string = 'Cancel';
   @Input() confirmType: string = 'primary';
