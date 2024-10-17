@@ -16,17 +16,17 @@
 
 .btn-primary {
   background-color: var(--up-window-primary);
-  color: var(--up-window-text);
+  color: #fff !important;
 }
 
 .btn-secondary {
   background-color: var(--up-window-secondary);
-  color: var(--up-window-text);
+  color: #fff !important;
 }
 
 .btn-danger {
   background-color: #c40707;
-  color: var(--up-window-text);
+  color: #fff !important;
 }
 
 .btn {
@@ -35,4 +35,5 @@
   border: none;
   border-radius: 0.7rem;
   font-weight: bold;
+  color: var(--up-window-color-text);
 }
