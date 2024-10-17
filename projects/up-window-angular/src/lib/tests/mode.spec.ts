@@ -97,4 +97,57 @@ describe('UpWindowAngularComponent', () => {
     const overlayElement = fixture.debugElement.query(By.css('.overlay'));
     expect(overlayElement.classes['grayscale']).toBeFalsy();
   });
+
+  it('should open drawer from the left', () => {
+    component.drawer = 'left';
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['drawer-left']).toBeTrue();
+    expect(component.isOpen()).toBeTrue();
+  });
+
+  it('should open drawer from the right', () => {
+    component.drawer = 'right';
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['drawer-right']).toBeTrue();
+    expect(component.isOpen()).toBeTrue();
+  });
+
+  it('should open drawer from the top', () => {
+    component.drawer = 'top';
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['drawer-top']).toBeTrue();
+    expect(component.isOpen()).toBeTrue();
+  });
+
+  it('should open drawer from the bottom', () => {
+    component.drawer = 'bottom';
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const windowElement = fixture.debugElement.query(By.css('.up-window'));
+    expect(windowElement.classes['drawer-bottom']).toBeTrue();
+    expect(component.isOpen()).toBeTrue();
+  });
+
+  it('should close drawer when isOpenDrawerLeft is set to false', fakeAsync(() => {
+    component.drawer = 'left';
+    component.isOpen.set(true);
+    fixture.detectChanges();
+    expect(component.isOpen()).toBeTrue();
+
+    component.isOpen.set(false);
+    tick(600);
+    fixture.detectChanges();
+
+    expect(component.isOpen()).toBeFalse();
+  }));
 });

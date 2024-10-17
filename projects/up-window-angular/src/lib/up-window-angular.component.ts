@@ -30,7 +30,8 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   @Input() subtitle?: string;
   @Input() class: string | undefined;
   @Input() isOpen: WritableSignal<boolean> = signal(false);
-  @Input() animation: string = 'fade';
+  @Input() drawer: 'bottom' | 'top' | 'left' | 'right' | '' = '';
+  @Input() animation: string = this.drawer ? this.drawer : 'fade';
   @Input() restrictMode: boolean = false;
   @Input() fullScreen: boolean = false;
   @Input() blur: boolean = false;
@@ -176,6 +177,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
       ...(this.class ? { [this.class]: true } : {}),
       [this.animation]: this.openingAnimation && !this.closingAnimation,
       [`${this.animation}-out`]: this.closingAnimation,
+      [`drawer drawer-${this.drawer}`]: !!this.drawer,
       shake: this.shakeAnimation,
       fullscreen: this.fullScreen,
       blur: this.blur,

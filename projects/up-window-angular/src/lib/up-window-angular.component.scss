@@ -82,6 +82,35 @@
       margin-top: auto;
     }
   }
+
+  &.drawer {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  &.drawer-bottom {
+    bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    margin: 1rem 1rem 0 0;
+  }
+
+  &.drawer-top {
+    top: 0;
+    border-radius: 0 0 1rem 1rem;
+    margin: 0 1rem;
+  }
+
+  &.drawer-left {
+    left: 0;
+    border-radius: 0 1rem 1rem 0;
+    margin: 1rem 1rem 1rem 0;
+  }
+
+  &.drawer-right {
+    right: 0;
+    border-radius: 1rem 0 0 1rem;
+    margin: 1rem 0 1rem 1rem;
+  }
 }
 
 .up-window-header {
