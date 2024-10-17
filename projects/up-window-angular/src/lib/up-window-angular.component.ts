@@ -137,6 +137,11 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
     document.removeEventListener('keydown', this.handleKeydown.bind(this));
   }
 
+  hasFooterContent(): boolean {
+    const footerContent = this.modal?.nativeElement.querySelector('[footer]');
+    return !!footerContent && footerContent.childNodes.length > 0;
+  }
+
   startOpeningAnimation() {
     this.openingAnimation = true;
     setTimeout(() => {
