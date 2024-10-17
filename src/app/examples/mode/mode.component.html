@@ -6,7 +6,7 @@
       type="button"
       (click)="openWindowExample('restrict')"
     >
-    <span class="material-symbols-outlined"> &#xe897; </span> Restrict
+      <span class="material-symbols-outlined"> &#xe897; </span> Restrict
     </button>
     <up-window-angular
       [isOpen]="isWindowOpenRestrict"
@@ -22,20 +22,53 @@
       type="button"
       (click)="openWindowExample('fullscreen')"
     >
-    <span class="material-symbols-outlined"> &#xe5d0; </span> FullScreen
+      <span class="material-symbols-outlined"> &#xe5d0; </span> FullScreen
     </button>
     <up-window-angular
       [isOpen]="isWindowOpenFullScreen"
+      title="Fullscreen Mode"
       [fullScreen]="true"
     >
-      Mode FullScreen content!
+      <p class="fullscreen-description">
+        Welcome to the Fullscreen Mode! This mode allows you to immerse yourself
+        in your content without distractions. Enjoy a wider view and enhance
+        your experience with more space for details and interactions.
+      </p>
+      <h2 class="fullscreen-subtitle">Key Features of Fullscreen Mode</h2>
+      <ul class="fullscreen-list">
+        <li>
+          <strong>Maximized View:</strong> Experience your application in a
+          larger context, perfect for presentations, graphics, or detailed data
+          analysis.
+        </li>
+        <li>
+          <strong>Improved Focus:</strong> Remove browser chrome and other
+          distractions, allowing you to concentrate fully on your task at hand.
+        </li>
+        <li>
+          <strong>Enhanced Interaction:</strong> Take advantage of additional
+          screen real estate for interactive elements, making navigation and
+          usage more intuitive.
+        </li>
+        <li>
+          <strong>Dynamic Content:</strong> Display rich media, videos, and
+          images without any interruptions, creating an engaging environment for
+          users.
+        </li>
+      </ul>
+      <h2 class="fullscreen-subtitle">How to Exit Fullscreen Mode</h2>
+      <p>
+        To exit fullscreen mode, simply click the <strong>Close</strong> button
+        below or press the <strong>Esc</strong> key on your keyboard. Enjoy your
+        expanded workspace!
+      </p>
     </up-window-angular>
     <button
       class="button-modal-example"
       type="button"
       (click)="openWindowExample('blur')"
     >
-    <span class="material-symbols-outlined"> &#xeb77; </span> Blur
+      <span class="material-symbols-outlined"> &#xeb77; </span> Blur
     </button>
     <up-window-angular
       [isOpen]="isWindowOpenBlur"
