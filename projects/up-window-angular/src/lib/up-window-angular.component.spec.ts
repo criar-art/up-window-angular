@@ -214,6 +214,22 @@ describe('UpWindowAngularComponent', () => {
     expect(overlayElement.classes['blur']).toBeFalsy();
   });
 
+  it('should apply grayscale class when grayscale input is true', () => {
+    component.grayscale = true;
+    fixture.detectChanges();
+
+    const overlayElement = fixture.debugElement.query(By.css('.overlay'));
+    expect(overlayElement.classes['grayscale']).toBeTrue();
+  });
+
+  it('should not apply grayscale class when grayscale input is false', () => {
+    component.grayscale = false;
+    fixture.detectChanges();
+
+    const overlayElement = fixture.debugElement.query(By.css('.overlay'));
+    expect(overlayElement.classes['grayscale']).toBeFalsy();
+  });
+
   it('should not show confirm and cancel buttons if hiddenActions is true', () => {
     component.hiddenActions = true;
     component.isOpen.set(true);
