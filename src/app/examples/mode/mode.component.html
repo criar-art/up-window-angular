@@ -162,3 +162,84 @@
     </up-window-angular>
   </div>
 </div>
+
+<div class="content">
+  <h2 class="content-title">Drawer</h2>
+  <div class="examples">
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('drawer-left')"
+    >
+      <span class="material-symbols-outlined"> &#xe72d; </span>
+      <span class="material-symbols-outlined"> &#xe5c4; </span> Left
+    </button>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('drawer-right')"
+    >
+      <span class="material-symbols-outlined"> &#xe72d; </span>
+      <span class="material-symbols-outlined"> &#xe5c8; </span> Right
+    </button>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('drawer-top')"
+    >
+      <span class="material-symbols-outlined"> &#xe72d; </span>
+      <span class="material-symbols-outlined"> &#xe5d8; </span> Top
+    </button>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('drawer-bottom')"
+    >
+      <span class="material-symbols-outlined"> &#xe72d; </span>
+      <span class="material-symbols-outlined"> &#xe5db; </span> Bottom
+    </button>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenDrawerTop"
+      title="Top Drawer"
+      subtitle="This is a top drawer."
+      [drawer]="drawerPosition"
+      animation="slide-down"
+    >
+      Content for top drawer!
+    </up-window-angular>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenDrawerBottom"
+      title="Bottom Drawer"
+      subtitle="This is a bottom drawer."
+      [drawer]="drawerPosition"
+      animation="slide-up"
+    >
+      Content for bottom drawer!
+    </up-window-angular>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenDrawerLeft"
+      title="Left Drawer"
+      subtitle="This is a left drawer."
+      [drawer]="drawerPosition"
+      animation="slide-left"
+    >
+      Content for left drawer!
+    </up-window-angular>
+
+    <up-window-angular
+      [isOpen]="isWindowOpenDrawerRight"
+      title="Right Drawer"
+      subtitle="This is a right drawer."
+      [drawer]="drawerPosition"
+      animation="slide-right"
+    >
+      Content for right drawer!
+    </up-window-angular>
+  </div>
+</div>

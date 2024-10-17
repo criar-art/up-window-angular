@@ -14,6 +14,12 @@ export class ModeComponent {
   isWindowOpenBlur: WritableSignal<boolean> = signal(false);
   isWindowOpenGrayscale: WritableSignal<boolean> = signal(false);
   isWindowOpenBlurGrayscale: WritableSignal<boolean> = signal(false);
+  isWindowOpenDrawerBottom: WritableSignal<boolean> = signal(false);
+  isWindowOpenDrawerTop: WritableSignal<boolean> = signal(false);
+  isWindowOpenDrawerLeft: WritableSignal<boolean> = signal(false);
+  isWindowOpenDrawerRight: WritableSignal<boolean> = signal(false);
+  drawerPosition: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
+
 
   openWindowExample(type: string) {
     this.isWindowOpenRestrict.set(false);
@@ -21,6 +27,10 @@ export class ModeComponent {
     this.isWindowOpenBlur.set(false);
     this.isWindowOpenGrayscale.set(false);
     this.isWindowOpenBlurGrayscale.set(false);
+    this.isWindowOpenDrawerBottom.set(false);
+    this.isWindowOpenDrawerTop.set(false);
+    this.isWindowOpenDrawerLeft.set(false);
+    this.isWindowOpenDrawerRight.set(false);
 
     switch (type) {
       case 'restrict':
@@ -37,6 +47,22 @@ export class ModeComponent {
         break;
       case 'blurGrayscale':
         this.isWindowOpenBlurGrayscale.set(true);
+        break;
+      case 'drawer-left':
+        this.drawerPosition = 'left';
+        this.isWindowOpenDrawerLeft.set(true);
+        break;
+      case 'drawer-right':
+        this.drawerPosition = 'right';
+        this.isWindowOpenDrawerRight.set(true);
+        break;
+      case 'drawer-top':
+        this.drawerPosition = 'top';
+        this.isWindowOpenDrawerTop.set(true);
+        break;
+      case 'drawer-bottom':
+        this.drawerPosition = 'bottom';
+        this.isWindowOpenDrawerBottom.set(true);
         break;
     }
   }
