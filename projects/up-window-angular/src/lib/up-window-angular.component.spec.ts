@@ -213,4 +213,28 @@ describe('UpWindowAngularComponent', () => {
     const overlayElement = fixture.debugElement.query(By.css('.overlay'));
     expect(overlayElement.classes['blur']).toBeFalsy();
   });
+
+  it('should not show confirm and cancel buttons if hiddenActions is true', () => {
+    component.hiddenActions = true;
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const confirmButton = fixture.debugElement.query(By.css('.btn-confirm'));
+    const cancelButton = fixture.debugElement.query(By.css('.btn-cancel'));
+
+    expect(confirmButton).toBeNull();
+    expect(cancelButton).toBeNull();
+  });
+
+  it('should show confirm and cancel buttons if hiddenActions is false', () => {
+    component.hiddenActions = false;
+    component.isOpen.set(true);
+    fixture.detectChanges();
+
+    const confirmButton = fixture.debugElement.query(By.css('.btn-confirm'));
+    const cancelButton = fixture.debugElement.query(By.css('.btn-cancel'));
+
+    expect(confirmButton).toBeTruthy();
+    expect(cancelButton).toBeTruthy();
+  });
 });
