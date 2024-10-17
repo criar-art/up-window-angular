@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
+import { UpWindowAngularModule } from '../../../../projects/up-window-angular/src/public-api';
 
 @Component({
   selector: 'examples-actions',
   standalone: true,
-  imports: [],
+  imports: [UpWindowAngularModule],
   templateUrl: './actions.component.html',
   styleUrl: './actions.component.scss'
 })
 export class ActionsComponent {
+  isWindowOpenFooter: WritableSignal<boolean> = signal(false);
 
+  openWindowExample(type: string) {
+    this.isWindowOpenFooter.set(false);
+    switch (type) {
+      case 'footer':
+        this.isWindowOpenFooter.set(true);
+        break;
+    }
+  }
 }
