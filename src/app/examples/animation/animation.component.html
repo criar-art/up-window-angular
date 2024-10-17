@@ -129,5 +129,52 @@
     >
       Rotate Right content!
     </up-window-angular>
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('flipper-left')"
+    >
+      <span class="material-symbols-outlined"> &#xeb59; </span> Flipper Left
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenFlipperLeft"
+      title="Flipper Left Window"
+      subtitle="This window flips in from the left."
+      animation="flipper-left"
+    >
+      Flipper Left content!
+    </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('flipper-right')"
+    >
+      <span class="material-symbols-outlined"> &#xeb52; </span> Flipper Right
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenFlipperRight"
+      title="Flipper Right Window"
+      subtitle="This window flips in from the right."
+      animation="flipper-right"
+    >
+      Flipper Right content!
+    </up-window-angular>
+
+    <button
+      class="button-modal-example"
+      type="button"
+      (click)="openWindowExample('flipper-up')"
+    >
+      <span class="material-symbols-outlined"> &#xeb2e; </span> Flipper Up
+    </button>
+    <up-window-angular
+      [isOpen]="isWindowOpenFlipperUp"
+      title="Flipper Up Window"
+      subtitle="This window flips in from the top."
+      animation="flipper-up"
+    >
+      Flipper Up content!
+    </up-window-angular>
   </div>
 </div>

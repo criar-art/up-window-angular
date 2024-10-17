@@ -65,6 +65,30 @@
   &.rotate-right-out {
     animation: up-window-rotateRightOut 0.5s forwards;
   }
+
+  &.flipper-left {
+    animation: up-window-flipLeftIn 0.5s forwards;
+  }
+
+  &.flipper-left-out {
+    animation: up-window-flipLeftOut 0.5s forwards;
+  }
+
+  &.flipper-right {
+    animation: up-window-flipRightIn 0.5s forwards;
+  }
+
+  &.flipper-right-out {
+    animation: up-window-flipRightOut 0.5s forwards;
+  }
+
+  &.flipper-up {
+    animation: up-window-flipUpIn 0.5s forwards;
+  }
+
+  &.flipper-up-out {
+    animation: up-window-flipUpOut 0.5s forwards;
+  }
 }
 
 @keyframes up-window-fadeIn {
@@ -236,6 +260,72 @@
   to {
     opacity: 0;
     transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@keyframes up-window-flipLeftIn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+}
+
+@keyframes up-window-flipLeftOut {
+  from {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+}
+
+@keyframes up-window-flipRightIn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+}
+
+@keyframes up-window-flipRightOut {
+  from {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+  }
+}
+
+@keyframes up-window-flipUpIn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0);
+  }
+}
+
+@keyframes up-window-flipUpOut {
+  from {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg);
   }
 }
 
