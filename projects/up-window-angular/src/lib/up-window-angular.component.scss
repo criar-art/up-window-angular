@@ -21,6 +21,10 @@
   &.blur {
     backdrop-filter: blur(6px);
   }
+
+  &.grayscale {
+    backdrop-filter: grayscale(1);
+  }
 }
 
 .up-window {
