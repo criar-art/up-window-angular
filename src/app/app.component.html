@@ -1,6 +1,6 @@
 <div id="app">
-  <app-darkmode [hiddenLabel]="true"></app-darkmode>
-  <app-header></app-header>
+  <darkmode-angular [hiddenLabel]="true" />
+  <app-header />
   <main class="main">
     <div class="content">
       <app-modal-install [active]="isModalActive" (closeModal)="closeModal()" />
@@ -30,5 +30,5 @@
     <examples-mode />
     <examples-actions />
   </main>
-  <app-footer></app-footer>
+  <app-footer />
 </div>

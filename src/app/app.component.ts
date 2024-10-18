@@ -1,9 +1,8 @@
 import { Component, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { DarkmodeComponent } from 'darkmode-angular';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { ModalinstallComponent } from './components/modal-install/modal-install.component';
-import { DarkmodeComponent } from './components/darkmode/darkmode.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { FormsModule } from '@angular/forms';
 import { AnimationComponent } from './examples/animation/animation.component';
