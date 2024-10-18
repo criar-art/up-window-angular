@@ -30,7 +30,7 @@ import { ActionsComponent } from './examples/actions/actions.component';
 export class AppComponent {
   constructor(private renderer: Renderer2) {}
 
-  codeString: string = '<up-window-angular />';
+  codeString: string = 'npm install up-window-angular';
   isModalActive: boolean = false;
 
   openModal(): void {
