@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { AnimationComponent } from './examples/animation/animation.component';
 import { ModeComponent } from './examples/mode/mode.component';
 import { ActionsComponent } from './examples/actions/actions.component';
@@ -14,8 +12,6 @@ import { ExampleComponent } from './app.example';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
-    FormsModule,
     AnimationComponent,
     ActionsComponent,
     ModeComponent,
