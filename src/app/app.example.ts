@@ -6,12 +6,12 @@ import UpWindowAngularModule from 'up-window-angular';
 @Component({
   selector: 'app-window-example',
   template: \`
-<button class="button-window-example" type="button" (click)="openWindowExample()">
+<button (click)="openWindowExample()">
   Open Window Example
 </button>
 
 <up-window-angular
-  [isOpen]="isWindowOpenExample"
+  [isOpen]="isWindowState"
   title="Window Title"
   subtitle="This is the subtitle of the window."
 >
@@ -19,9 +19,9 @@ import UpWindowAngularModule from 'up-window-angular';
 </up-window-angular>\`,
 })
 export class WindowExampleComponent {
-  isWindowOpenExample: WritableSignal<boolean> = signal(false);
+  isWindowState: WritableSignal<boolean> = signal(false);
 
   openWindowExample() {
-    this.isWindowOpenExample.set(true);
+    this.isWindowState.set(true);
   }
 }`
