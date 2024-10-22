@@ -149,9 +149,8 @@ h2 {
 .button-modal-example {
   background: var(--primary);
   color: #fff;
-  margin-top: 1rem;
-  margin-left: 0;
   padding: 1rem;
+  margin: 0;
 }
 
 .button-modal-example {
@@ -186,7 +185,14 @@ h2 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  button { flex: 1; }
+  div {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  div, button {
+    flex: 1;
+  }
 }
 
 .not-found {
