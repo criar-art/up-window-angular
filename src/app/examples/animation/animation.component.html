@@ -8,16 +8,6 @@
     >
       <span class="material-symbols-outlined"> &#xf50c; </span> Fade
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenFade"
-      title="Fade Window"
-      subtitle="This window uses a fade animation."
-      animation="fade"
-      (confirm)="handleConfirm()"
-      (cancel)="handleCancel()"
-    >
-      Fade content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -26,14 +16,6 @@
     >
       <span class="material-symbols-outlined"> &#xe5c4; </span> Slide Left
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenSlideLeft"
-      title="Slide Left Window"
-      subtitle="This window uses a slide animation."
-      animation="slide-left"
-    >
-      Slide Left content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -42,14 +24,6 @@
     >
       <span class="material-symbols-outlined"> &#xe5c8; </span> Slide Right
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenSlideRight"
-      title="Slide Right Window"
-      subtitle="This window uses a slide animation."
-      animation="slide-right"
-    >
-      Slide Right content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -58,14 +32,6 @@
     >
       <span class="material-symbols-outlined"> &#xe5d8; </span> Slide Up
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenSlideUp"
-      title="Slide Up Window"
-      subtitle="This window uses a slide-up animation."
-      animation="slide-up"
-    >
-      Slide Up content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -74,14 +40,7 @@
     >
       <span class="material-symbols-outlined"> &#xe5db; </span> Slide Down
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenSlideDown"
-      title="Slide Down Window"
-      subtitle="This window uses a slide-down animation."
-      animation="slide-down"
-    >
-      Slide Down content!
-    </up-window-angular>
+
     <button
       class="button-modal-example"
       type="button"
@@ -89,14 +48,6 @@
     >
       <span class="material-symbols-outlined"> &#xe8ff; </span> Scale
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenScale"
-      title="Scale Window"
-      subtitle="This window uses a scale animation."
-      animation="scale"
-    >
-      Scale content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -105,14 +56,6 @@
     >
       <span class="material-symbols-outlined"> &#xe419; </span> Rotate Left
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenRotateLeft"
-      title="Rotate Left Window"
-      subtitle="This window uses a rotate-left animation."
-      animation="rotate-left"
-    >
-      Rotate Left content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -121,14 +64,7 @@
     >
       <span class="material-symbols-outlined"> &#xe41a; </span> Rotate Right
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenRotateRight"
-      title="Rotate Right Window"
-      subtitle="This window uses a rotate-right animation."
-      animation="rotate-right"
-    >
-      Rotate Right content!
-    </up-window-angular>
+
     <button
       class="button-modal-example"
       type="button"
@@ -136,14 +72,6 @@
     >
       <span class="material-symbols-outlined"> &#xeb59; </span> Flipper Left
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenFlipperLeft"
-      title="Flipper Left Window"
-      subtitle="This window flips in from the left."
-      animation="flipper-left"
-    >
-      Flipper Left content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -152,14 +80,6 @@
     >
       <span class="material-symbols-outlined"> &#xeb52; </span> Flipper Right
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenFlipperRight"
-      title="Flipper Right Window"
-      subtitle="This window flips in from the right."
-      animation="flipper-right"
-    >
-      Flipper Right content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -168,13 +88,106 @@
     >
       <span class="material-symbols-outlined"> &#xeb2e; </span> Flipper Up
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenFlipperUp"
-      title="Flipper Up Window"
-      subtitle="This window flips in from the top."
-      animation="flipper-up"
-    >
-      Flipper Up content!
-    </up-window-angular>
   </div>
 </div>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFade"
+  title="Fade Window"
+  subtitle="This window uses a fade animation."
+  animation="fade"
+  (confirm)="handleConfirm()"
+  (cancel)="handleCancel()"
+>
+  Fade content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenSlideLeft"
+  title="Slide Left Window"
+  subtitle="This window uses a slide animation."
+  animation="slide-left"
+>
+  Slide Left content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenSlideRight"
+  title="Slide Right Window"
+  subtitle="This window uses a slide animation."
+  animation="slide-right"
+>
+  Slide Right content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenSlideUp"
+  title="Slide Up Window"
+  subtitle="This window uses a slide-up animation."
+  animation="slide-up"
+>
+  Slide Up content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenSlideDown"
+  title="Slide Down Window"
+  subtitle="This window uses a slide-down animation."
+  animation="slide-down"
+>
+  Slide Down content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenScale"
+  title="Scale Window"
+  subtitle="This window uses a scale animation."
+  animation="scale"
+>
+  Scale content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenRotateLeft"
+  title="Rotate Left Window"
+  subtitle="This window uses a rotate-left animation."
+  animation="rotate-left"
+>
+  Rotate Left content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenRotateRight"
+  title="Rotate Right Window"
+  subtitle="This window uses a rotate-right animation."
+  animation="rotate-right"
+>
+  Rotate Right content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFlipperLeft"
+  title="Flipper Left Window"
+  subtitle="This window flips in from the left."
+  animation="flipper-left"
+>
+  Flipper Left content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFlipperRight"
+  title="Flipper Right Window"
+  subtitle="This window flips in from the right."
+  animation="flipper-right"
+>
+  Flipper Right content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFlipperUp"
+  title="Flipper Up Window"
+  subtitle="This window flips in from the top."
+  animation="flipper-up"
+>
+  Flipper Up content!
+</up-window-angular>

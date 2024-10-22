@@ -186,6 +186,7 @@ h2 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  button { flex: 1; }
 }
 
 .not-found {

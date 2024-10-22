@@ -8,15 +8,6 @@
     >
       <span class="material-symbols-outlined"> &#xe897; </span> Restrict
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenRestrict"
-      title="Restrict Window"
-      subtitle="This window mode Restrict."
-      [restrictMode]="true"
-      cancelType="danger"
-    >
-      Mode Restrict content!
-    </up-window-angular>
     <button
       class="button-modal-example"
       type="button"
@@ -24,91 +15,6 @@
     >
       <span class="material-symbols-outlined"> &#xe5d0; </span> FullScreen
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenFullScreen"
-      title="Fullscreen Mode"
-      [fullScreen]="true"
-      [hiddenActions]="true"
-    >
-      <p class="fullscreen-description">
-        Welcome to the Fullscreen Mode! This mode allows you to immerse yourself
-        in your content without distractions. Enjoy a wider view and enhance
-        your experience with more space for details and interactions.
-      </p>
-      <h2 class="fullscreen-subtitle">Key Features of Fullscreen Mode</h2>
-      <ul class="fullscreen-list">
-        <li>
-          <strong>Maximized View:</strong> Experience your application in a
-          larger context, perfect for presentations, graphics, or detailed data
-          analysis.
-        </li>
-        <li>
-          <strong>Improved Focus:</strong> Remove browser chrome and other
-          distractions, allowing you to concentrate fully on your task at hand.
-        </li>
-        <li>
-          <strong>Enhanced Interaction:</strong> Take advantage of additional
-          screen real estate for interactive elements, making navigation and
-          usage more intuitive.
-        </li>
-        <li>
-          <strong>Dynamic Content:</strong> Display rich media, videos, and
-          images without any interruptions, creating an engaging environment for
-          users.
-        </li>
-        <li>
-          <strong>Customizable Layout:</strong> Adjust the layout to fit your
-          needs, whether for data visualization or content-heavy presentations.
-        </li>
-        <li>
-          <strong>Responsive Design:</strong> Enjoy a seamless experience across
-          devices, ensuring that the fullscreen mode adapts beautifully to
-          different screen sizes.
-        </li>
-        <li>
-          <strong>Accessibility Features:</strong> Fullscreen mode maintains
-          accessibility standards, allowing users with disabilities to navigate
-          easily and effectively.
-        </li>
-      </ul>
-
-      <h2 class="fullscreen-subtitle">How to Exit Fullscreen Mode</h2>
-      <p>
-        To exit fullscreen mode, simply click the <strong>Close</strong> button
-        below or press the <strong>Esc</strong> key on your keyboard. Enjoy your
-        expanded workspace!
-      </p>
-      <h2 class="fullscreen-subtitle">Additional Tips for Fullscreen Mode</h2>
-      <p>
-        Remember to utilize keyboard shortcuts to navigate through your content
-        efficiently. Fullscreen mode often provides enhanced support for
-        keyboard shortcuts, allowing you to quickly access features without
-        relying on your mouse.
-      </p>
-      <p>
-        If you're using multimedia content, consider utilizing the full
-        capabilities of your application by incorporating video playback
-        features and interactive graphics. This maximizes the immersive
-        experience offered by fullscreen mode.
-      </p>
-      <p>
-        Keep in mind that during fullscreen mode, you can still interact with
-        various elements of your application, such as forms and interactive
-        dashboards, which can greatly enhance your productivity.
-      </p>
-      <p>
-        For applications that require user input, ensure that all interactive
-        elements are easily accessible, as the fullscreen experience may alter
-        how users interact with your application.
-      </p>
-      <p>
-        Finally, consider providing users with a tutorial or tips on how to make
-        the most of their experience while in fullscreen mode. This can help
-        users discover features they may not have known about, enhancing their
-        overall experience.
-      </p>
-    </up-window-angular>
-
     <button
       class="button-modal-example"
       type="button"
@@ -116,14 +22,6 @@
     >
       <span class="material-symbols-outlined"> &#xeb77; </span> Blur
     </button>
-    <up-window-angular
-      [isOpen]="isWindowOpenBlur"
-      title="Blur Window"
-      subtitle="This window mode Blur."
-      [blur]="true"
-    >
-      Mode Blur content!
-    </up-window-angular>
 
     <button
       class="button-modal-example"
@@ -132,15 +30,6 @@
     >
       <span class="material-symbols-outlined"> &#xe3f6; </span> Grayscale
     </button>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenGrayscale"
-      title="Grayscale Window"
-      subtitle="This window mode Grayscale."
-      [grayscale]="true"
-    >
-      Mode Grayscale content!
-    </up-window-angular>
     <button
       class="button-modal-example"
       type="button"
@@ -150,16 +39,6 @@
       <span class="material-symbols-outlined plus"> &#xe145; </span>
       <span class="material-symbols-outlined"> &#xe3f6; </span> Grayscale
     </button>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenBlurGrayscale"
-      title="Blur + Grayscale Window"
-      subtitle="This window combines blur and grayscale modes."
-      [blur]="true"
-      [grayscale]="true"
-    >
-      Content with both blur and grayscale effects!
-    </up-window-angular>
   </div>
 </div>
 
@@ -201,45 +80,166 @@
       <span class="material-symbols-outlined"> &#xe72d; </span>
       <span class="material-symbols-outlined"> &#xe5db; </span> Bottom
     </button>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenDrawerTop"
-      title="Top Drawer"
-      subtitle="This is a top drawer."
-      [drawer]="drawerPosition"
-      animation="slide-down"
-    >
-      Content for top drawer!
-    </up-window-angular>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenDrawerBottom"
-      title="Bottom Drawer"
-      subtitle="This is a bottom drawer."
-      [drawer]="drawerPosition"
-      animation="slide-up"
-    >
-      Content for bottom drawer!
-    </up-window-angular>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenDrawerLeft"
-      title="Left Drawer"
-      subtitle="This is a left drawer."
-      [drawer]="drawerPosition"
-      animation="slide-left"
-    >
-      Content for left drawer!
-    </up-window-angular>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenDrawerRight"
-      title="Right Drawer"
-      subtitle="This is a right drawer."
-      [drawer]="drawerPosition"
-      animation="slide-right"
-    >
-      Content for right drawer!
-    </up-window-angular>
   </div>
 </div>
+
+<up-window-angular
+  [isOpen]="isWindowOpenRestrict"
+  title="Restrict Window"
+  subtitle="This window mode Restrict."
+  [restrictMode]="true"
+  cancelType="danger"
+>
+  Mode Restrict content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFullScreen"
+  title="Fullscreen Mode"
+  [fullScreen]="true"
+  [hiddenActions]="true"
+>
+  <p class="fullscreen-description">
+    Welcome to the Fullscreen Mode! This mode allows you to immerse yourself in
+    your content without distractions. Enjoy a wider view and enhance your
+    experience with more space for details and interactions.
+  </p>
+  <h2 class="fullscreen-subtitle">Key Features of Fullscreen Mode</h2>
+  <ul class="fullscreen-list">
+    <li>
+      <strong>Maximized View:</strong> Experience your application in a larger
+      context, perfect for presentations, graphics, or detailed data analysis.
+    </li>
+    <li>
+      <strong>Improved Focus:</strong> Remove browser chrome and other
+      distractions, allowing you to concentrate fully on your task at hand.
+    </li>
+    <li>
+      <strong>Enhanced Interaction:</strong> Take advantage of additional screen
+      real estate for interactive elements, making navigation and usage more
+      intuitive.
+    </li>
+    <li>
+      <strong>Dynamic Content:</strong> Display rich media, videos, and images
+      without any interruptions, creating an engaging environment for users.
+    </li>
+    <li>
+      <strong>Customizable Layout:</strong> Adjust the layout to fit your needs,
+      whether for data visualization or content-heavy presentations.
+    </li>
+    <li>
+      <strong>Responsive Design:</strong> Enjoy a seamless experience across
+      devices, ensuring that the fullscreen mode adapts beautifully to different
+      screen sizes.
+    </li>
+    <li>
+      <strong>Accessibility Features:</strong> Fullscreen mode maintains
+      accessibility standards, allowing users with disabilities to navigate
+      easily and effectively.
+    </li>
+  </ul>
+
+  <h2 class="fullscreen-subtitle">How to Exit Fullscreen Mode</h2>
+  <p>
+    To exit fullscreen mode, simply click the <strong>Close</strong> button
+    below or press the <strong>Esc</strong> key on your keyboard. Enjoy your
+    expanded workspace!
+  </p>
+  <h2 class="fullscreen-subtitle">Additional Tips for Fullscreen Mode</h2>
+  <p>
+    Remember to utilize keyboard shortcuts to navigate through your content
+    efficiently. Fullscreen mode often provides enhanced support for keyboard
+    shortcuts, allowing you to quickly access features without relying on your
+    mouse.
+  </p>
+  <p>
+    If you're using multimedia content, consider utilizing the full capabilities
+    of your application by incorporating video playback features and interactive
+    graphics. This maximizes the immersive experience offered by fullscreen
+    mode.
+  </p>
+  <p>
+    Keep in mind that during fullscreen mode, you can still interact with
+    various elements of your application, such as forms and interactive
+    dashboards, which can greatly enhance your productivity.
+  </p>
+  <p>
+    For applications that require user input, ensure that all interactive
+    elements are easily accessible, as the fullscreen experience may alter how
+    users interact with your application.
+  </p>
+  <p>
+    Finally, consider providing users with a tutorial or tips on how to make the
+    most of their experience while in fullscreen mode. This can help users
+    discover features they may not have known about, enhancing their overall
+    experience.
+  </p>
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenBlur"
+  title="Blur Window"
+  subtitle="This window mode Blur."
+  [blur]="true"
+>
+  Mode Blur content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenGrayscale"
+  title="Grayscale Window"
+  subtitle="This window mode Grayscale."
+  [grayscale]="true"
+>
+  Mode Grayscale content!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenBlurGrayscale"
+  title="Blur + Grayscale Window"
+  subtitle="This window combines blur and grayscale modes."
+  [blur]="true"
+  [grayscale]="true"
+>
+  Content with both blur and grayscale effects!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenDrawerTop"
+  title="Top Drawer"
+  subtitle="This is a top drawer."
+  [drawer]="drawerPosition"
+  animation="slide-down"
+>
+  Content for top drawer!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenDrawerBottom"
+  title="Bottom Drawer"
+  subtitle="This is a bottom drawer."
+  [drawer]="drawerPosition"
+  animation="slide-up"
+>
+  Content for bottom drawer!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenDrawerLeft"
+  title="Left Drawer"
+  subtitle="This is a left drawer."
+  [drawer]="drawerPosition"
+  animation="slide-left"
+>
+  Content for left drawer!
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenDrawerRight"
+  title="Right Drawer"
+  subtitle="This is a right drawer."
+  [drawer]="drawerPosition"
+  animation="slide-right"
+>
+  Content for right drawer!
+</up-window-angular>

@@ -9,28 +9,6 @@
       <span class="material-symbols-outlined"> &#xf3c3; </span> Custom Footer
     </button>
 
-    <up-window-angular
-      [isOpen]="isWindowOpenFooter"
-      title="Custom Footer Example"
-      subtitle="Choose an action below"
-      buttonAlignment="start"
-    >
-      <p>
-        This window features a custom footer that provides tailored actions for
-        your convenience. You can use the buttons below to either close the
-        window or perform the designated action as per your requirement.
-      </p>
-      <div footer>
-        <button class="custom-btn close" (click)="isWindowOpenFooter.set(false)">
-          Close
-        </button>
-        <button class="custom-btn confirm" (click)="isWindowOpenFooter.set(false)">
-          Perform Action
-        </button>
-        <span>Custom footer example text.</span>
-      </div>
-    </up-window-angular>
-
     <button
       class="button-modal-example"
       type="button"
@@ -38,17 +16,40 @@
     >
       <span class="material-symbols-outlined"> &#xeb80; </span> Hidden Actions
     </button>
-
-    <up-window-angular
-      [isOpen]="isWindowOpenHidden"
-      title="Hidden Actions Example"
-      subtitle="No actions available"
-      buttonAlignment="start"
-      [hiddenActions]="true"
-    >
-      <p>
-        This window demonstrates how to use the hidden actions feature. No footer buttons will be displayed.
-      </p>
-    </up-window-angular>
   </div>
 </div>
+
+<up-window-angular
+  [isOpen]="isWindowOpenFooter"
+  title="Custom Footer Example"
+  subtitle="Choose an action below"
+  buttonAlignment="start"
+>
+  <p>
+    This window features a custom footer that provides tailored actions for your
+    convenience. You can use the buttons below to either close the window or
+    perform the designated action as per your requirement.
+  </p>
+  <div footer>
+    <button class="custom-btn close" (click)="isWindowOpenFooter.set(false)">
+      Close
+    </button>
+    <button class="custom-btn confirm" (click)="isWindowOpenFooter.set(false)">
+      Perform Action
+    </button>
+    <span>Custom footer example text.</span>
+  </div>
+</up-window-angular>
+
+<up-window-angular
+  [isOpen]="isWindowOpenHidden"
+  title="Hidden Actions Example"
+  subtitle="No actions available"
+  buttonAlignment="start"
+  [hiddenActions]="true"
+>
+  <p>
+    This window demonstrates how to use the hidden actions feature. No footer
+    buttons will be displayed.
+  </p>
+</up-window-angular>
