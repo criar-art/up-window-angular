@@ -18,7 +18,6 @@ import { ExampleComponent } from './app.example';
     NucleusAngularApp,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   public appVersion;
