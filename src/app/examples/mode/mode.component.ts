@@ -1,10 +1,11 @@
 import { Component, signal, WritableSignal } from '@angular/core';
 import { UpWindowAngularModule } from '../../../../projects/up-window-angular/src/public-api';
+import { NucleusBox } from 'nucleus-angular';
 
 @Component({
   selector: 'examples-mode',
   standalone: true,
-  imports: [UpWindowAngularModule],
+  imports: [UpWindowAngularModule, NucleusBox],
   templateUrl: './mode.component.html',
   styleUrl: './mode.component.scss',
 })
