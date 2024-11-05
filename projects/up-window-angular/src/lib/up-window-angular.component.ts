@@ -78,15 +78,7 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   ngAfterViewInit(): void {
     if (this.modal) {
       document.body.appendChild(this.modal.nativeElement);
-
-      this.focusableElements = this.modal.nativeElement.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      if (this.focusableElements.length > 0) {
-        this.firstFocusableElement = this.focusableElements[0];
-        this.lastFocusableElement =
-          this.focusableElements[this.focusableElements.length - 1];
-      }
+      this.setFocusableElements();
     }
     this.cdr.detectChanges();
   }
@@ -94,12 +86,30 @@ export class UpWindowAngularComponent implements OnInit, OnDestroy {
   addModalToBody() {
     if (this.modal && this.modal.nativeElement.parentNode !== document.body) {
       document.body.appendChild(this.modal.nativeElement);
+
+      setTimeout(() => {
+        if (this.lastFocusableElement) {
+          this.lastFocusableElement.focus();
+        }
+      }, 0);
     }
   }
 
   removeModalFromBody() {
     if (this.modal && this.modal.nativeElement.parentNode === document.body) {
       document.body.removeChild(this.modal.nativeElement);
+    }
+  }
+
+  setFocusableElements() {
+    this.focusableElements = this.modal.nativeElement.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (this.focusableElements.length > 0) {
+      this.firstFocusableElement = this.focusableElements[0];
+      this.lastFocusableElement =
+        this.focusableElements[this.focusableElements.length - 1];
     }
   }
 
