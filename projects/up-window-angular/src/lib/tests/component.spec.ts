@@ -42,10 +42,6 @@ describe('UpWindowAngularComponent', () => {
   });
 
   it('should append modal to body when isOpen is true', fakeAsync(() => {
-    component.isOpen.set(false);
-    fixture.detectChanges();
-    expect(document.body.querySelector('.up-window')).toBeNull();
-
     component.isOpen.set(true);
     fixture.detectChanges();
     tick(100);

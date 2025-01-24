@@ -3,11 +3,10 @@ import { UpWindowAngularModule } from '../../../../projects/up-window-angular/sr
 import { NucleusBox } from 'nucleus-angular';
 
 @Component({
-  selector: 'examples-actions',
-  standalone: true,
-  imports: [UpWindowAngularModule, NucleusBox],
-  templateUrl: './actions.component.html',
-  styleUrl: './actions.component.scss'
+    selector: 'examples-actions',
+    imports: [UpWindowAngularModule, NucleusBox],
+    templateUrl: './actions.component.html',
+    styleUrl: './actions.component.scss'
 })
 export class ActionsComponent {
   isWindowOpenFooter: WritableSignal<boolean> = signal(false);
