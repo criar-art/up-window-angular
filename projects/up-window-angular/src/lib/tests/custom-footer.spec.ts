@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { Component, signal, WritableSignal } from '@angular/core';
 
 @Component({
-  template: `
+    template: `
     <up-window-angular
       [isOpen]="isWindowOpenFooter"
       title="Test Window"
@@ -21,6 +21,7 @@ import { Component, signal, WritableSignal } from '@angular/core';
       </div>
     </up-window-angular>
   `,
+    standalone: false
 })
 class HostComponentWithCustomFooter {
   isWindowOpenFooter: WritableSignal<boolean> = signal(true);

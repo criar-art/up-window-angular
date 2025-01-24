@@ -3,11 +3,10 @@ import { UpWindowAngularModule } from '../../../../projects/up-window-angular/sr
 import { NucleusBox } from 'nucleus-angular';
 
 @Component({
-  selector: 'examples-mode',
-  standalone: true,
-  imports: [UpWindowAngularModule, NucleusBox],
-  templateUrl: './mode.component.html',
-  styleUrl: './mode.component.scss',
+    selector: 'examples-mode',
+    imports: [UpWindowAngularModule, NucleusBox],
+    templateUrl: './mode.component.html',
+    styleUrl: './mode.component.scss'
 })
 export class ModeComponent {
   isWindowOpenRestrict: WritableSignal<boolean> = signal(false);

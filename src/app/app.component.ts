@@ -9,15 +9,14 @@ import pkgNPM from '../../projects/up-window-angular/package.json';
 import { ExampleComponent } from './app.example';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    AnimationComponent,
-    ActionsComponent,
-    ModeComponent,
-    NucleusAngularApp,
-  ],
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    imports: [
+        AnimationComponent,
+        ActionsComponent,
+        ModeComponent,
+        NucleusAngularApp,
+    ],
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
   public appVersion;

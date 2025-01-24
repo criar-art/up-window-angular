@@ -3,11 +3,10 @@ import { UpWindowAngularModule } from '../../../../projects/up-window-angular/sr
 import { NucleusBox } from 'nucleus-angular';
 
 @Component({
-  selector: 'examples-animation',
-  standalone: true,
-  imports: [UpWindowAngularModule, NucleusBox],
-  templateUrl: './animation.component.html',
-  styleUrl: './animation.component.scss'
+    selector: 'examples-animation',
+    imports: [UpWindowAngularModule, NucleusBox],
+    templateUrl: './animation.component.html',
+    styleUrl: './animation.component.scss'
 })
 export class AnimationComponent {
   isWindowOpenFade: WritableSignal<boolean> = signal(false);
