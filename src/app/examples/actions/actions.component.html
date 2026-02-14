@@ -1,20 +1,14 @@
-<nucleus-box title="Actions">
-  <div class="examples">
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('footer')"
-    >
-      <span class="material-symbols-outlined"> &#xf3c3; </span> Custom Footer
-    </button>
-
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('hidden')"
-    >
-      <span class="material-symbols-outlined"> &#xeb80; </span> Hidden Actions
-    </button>
+<nucleus-box title="Action Examples">
+  <div class="examples-container">
+    <div class="category-group">
+      <span class="category-label">Custom Actions</span>
+      <button class="button-modal-example" (click)="openWindowExample('footer')">
+        <span class="material-symbols-outlined">&#xf3c3;</span> Custom Footer
+      </button>
+      <button class="button-modal-example" (click)="openWindowExample('hidden')">
+        <span class="material-symbols-outlined">&#xeb80;</span> Hidden Actions
+      </button>
+    </div>
   </div>
 </nucleus-box>
 

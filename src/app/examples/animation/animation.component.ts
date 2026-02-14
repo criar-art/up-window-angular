@@ -6,7 +6,6 @@ import { NucleusBox } from 'nucleus-angular';
     selector: 'examples-animation',
     imports: [UpWindowAngularModule, NucleusBox],
     templateUrl: './animation.component.html',
-    styleUrl: './animation.component.scss'
 })
 export class AnimationComponent {
   isWindowOpenFade: WritableSignal<boolean> = signal(false);

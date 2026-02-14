@@ -1,87 +1,43 @@
-<nucleus-box title="Mode">
-  <div class="examples">
-    <div>
-      <button
-        class="button-modal-example"
-        type="button"
-        (click)="openWindowExample('restrict')"
-      >
-        <span class="material-symbols-outlined"> &#xe897; </span> Restrict
+<nucleus-box title="Mode Examples">
+  <div class="examples-container">
+    <div class="category-group">
+      <span class="category-label">Display Modes</span>
+      <button class="button-modal-example" (click)="openWindowExample('restrict')">
+        <span class="material-symbols-outlined">&#xe897;</span> Restrict
       </button>
-      <button
-        class="button-modal-example"
-        type="button"
-        (click)="openWindowExample('fullscreen')"
-      >
-        <span class="material-symbols-outlined"> &#xe5d0; </span> FullScreen
+      <button class="button-modal-example" (click)="openWindowExample('fullscreen')">
+        <span class="material-symbols-outlined">&#xe5d0;</span> FullScreen
       </button>
     </div>
-    <div>
-      <button
-        class="button-modal-example"
-        type="button"
-        (click)="openWindowExample('blur')"
-      >
-        <span class="material-symbols-outlined"> &#xeb77; </span> Blur
-      </button>
 
-      <button
-        class="button-modal-example"
-        type="button"
-        (click)="openWindowExample('grayscale')"
-      >
-        <span class="material-symbols-outlined"> &#xe3f6; </span> Grayscale
+    <div class="category-group">
+      <span class="category-label">Visual Effects</span>
+      <button class="button-modal-example" (click)="openWindowExample('blur')">
+        <span class="material-symbols-outlined">&#xeb77;</span> Blur
       </button>
-      <button
-        class="button-modal-example"
-        type="button"
-        (click)="openWindowExample('blurGrayscale')"
-      >
-        <span class="material-symbols-outlined"> &#xeb77; </span> Blur
-        <span class="material-symbols-outlined plus"> &#xe145; </span>
-        <span class="material-symbols-outlined"> &#xe3f6; </span> Grayscale
+      <button class="button-modal-example" (click)="openWindowExample('grayscale')">
+        <span class="material-symbols-outlined">&#xe3f6;</span> Grayscale
+      </button>
+      <button class="button-modal-example" (click)="openWindowExample('blurGrayscale')">
+        <span class="material-symbols-outlined">&#xeb77;</span> Blur <span class="material-symbols-outlined plus">&#xe145;</span> <span class="material-symbols-outlined">&#xe3f6;</span> Gray
       </button>
     </div>
-  </div>
-</nucleus-box>
 
-<nucleus-box title="Drawer">
-  <div class="examples">
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('drawer-left')"
-    >
-      <span class="material-symbols-outlined"> &#xe72d; </span>
-      <span class="material-symbols-outlined"> &#xe5c4; </span> Left
-    </button>
-
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('drawer-right')"
-    >
-      <span class="material-symbols-outlined"> &#xe72d; </span>
-      <span class="material-symbols-outlined"> &#xe5c8; </span> Right
-    </button>
-
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('drawer-top')"
-    >
-      <span class="material-symbols-outlined"> &#xe72d; </span>
-      <span class="material-symbols-outlined"> &#xe5d8; </span> Top
-    </button>
-
-    <button
-      class="button-modal-example"
-      type="button"
-      (click)="openWindowExample('drawer-bottom')"
-    >
-      <span class="material-symbols-outlined"> &#xe72d; </span>
-      <span class="material-symbols-outlined"> &#xe5db; </span> Bottom
-    </button>
+    <div class="category-group">
+      <span class="category-label">Drawer</span>
+      <button class="button-modal-example" (click)="openWindowExample('drawer-left')">
+        <span class="material-symbols-outlined">&#xe5c4;</span> Left
+      </button>
+      <button class="button-modal-example" (click)="openWindowExample('drawer-right')">
+        <span class="material-symbols-outlined">&#xe5c8;</span> Right
+      </button>
+      <button class="button-modal-example" (click)="openWindowExample('drawer-top')">
+        <span class="material-symbols-outlined">&#xe5d8;</span> Top
+      </button>
+      <button class="button-modal-example" (click)="openWindowExample('drawer-bottom')">
+        <span class="material-symbols-outlined">&#xe5db;</span> Bottom
+      </button>
+    </div>
   </div>
 </nucleus-box>
 
